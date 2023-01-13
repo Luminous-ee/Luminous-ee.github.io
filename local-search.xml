@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>Gridea+GitHub Pages搭建个人静态博客</title>
+    <link href="/2023/01/13/Gridea-GitHub-Pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/"/>
+    <url>/2023/01/13/Gridea-GitHub-Pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Gridea-GitHub-Pages搭建"><a href="#Gridea-GitHub-Pages搭建" class="headerlink" title="Gridea+GitHub Pages搭建"></a>Gridea+GitHub Pages搭建</h1><ol><li><p>创建并登录你的 GitHub 账号。</p><p><a href="https://github.com/">GitHub</a></p></li><li><p>创建一个公开仓库，名为<code>xxx.github.io</code>。（xxx为你的 GitHub 用户名）</p><blockquote><p>选择 <code>Public</code>（公开仓库）</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/Luminous-ee/ImgBed/photos/g1_LI.jpg" alt="avater"></p></li><li><p>进入账户设置: </p><ul><li><p><code>Settings</code>-&gt;<code>Developer settings</code>-&gt;<code>Personal access tokens</code>-&gt;生成新的token</p></li><li><p><code>Note</code>做一些描述，勾选上 <code>repo</code> 的相关权限，即可生成一个 Token。如下图：</p></li></ul><p><img src="https://cdn.jsdelivr.net/gh/Luminous-ee/ImgBed/photos/g2.png"></p><blockquote><p>注意：生成之后记得把 Token 复制到你的本地，因为一旦关闭网页将不能再看到它。</p></blockquote></li></ol><h1 id="开始Gridea配置"><a href="#开始Gridea配置" class="headerlink" title="开始Gridea配置"></a>开始Gridea配置</h1><ol><li><p>Gridea 进行远程设置</p><p><img src="https://cdn.jsdelivr.net/gh/Luminous-ee/ImgBed/photos/g3.png"></p></li><li><p>点击「检测远程链接」，进行配置检查。</p></li><li><p>点击 Gridea 中的<code>同步</code>按钮即可。</p><blockquote><p>初次部署等待几分钟，之后就可以去浏览器访问你的域名（即<code>xxx.github.io</code>）</p></blockquote></li><li><p>你可以做一些自定义配置</p><ul><li><p>自定义菜单</p></li><li><p>任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p></li></ul><p><img src="https://cdn.jsdelivr.net/gh/Luminous-ee/ImgBed/photos/g4.png"></p></li></ol><h1 id="开启评论功能"><a href="#开启评论功能" class="headerlink" title="开启评论功能"></a>开启评论功能</h1><p>Gridea 支持 Gitalk 和 Disqus 两种评论系统，这里介绍 Gitalk 评论。</p><blockquote><p>Gitalk 是一个基于 GitHub Issue 和 Preact 开发的评论插件。</p></blockquote><ol><li><p>点此注册：<a href="https://github.com/settings/applications/new">Register a new OAuth application</a></p><p><img src="https://cdn.jsdelivr.net/gh/Luminous-ee/ImgBed/photos/g5.png"></p></li><li><p>将 Client ID 和 Client Secret 复制保存到本地</p><blockquote><p>请务必现在复制您的Client Secret，关闭网页后你再也看不到它了。</p></blockquote></li><li><p>在Gridea中设置、保存、同步，评论功能开启。</p><p><img src="https://cdn.jsdelivr.net/gh/Luminous-ee/ImgBed/photos/g6.png"></p></li></ol><h1 id="现在，开启你的博客之旅。"><a href="#现在，开启你的博客之旅。" class="headerlink" title="现在，开启你的博客之旅。"></a>现在，开启你的博客之旅。</h1>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>blog</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>hello-gridea</title>
     <link href="/2022/12/11/hello-gridea/"/>
     <url>/2022/12/11/hello-gridea/</url>
@@ -24,8 +43,8 @@
   
   <entry>
     <title>Hello Hexo</title>
-    <link href="/2022/12/10/hello-world/"/>
-    <url>/2022/12/10/hello-world/</url>
+    <link href="/2022/12/10/hello-hexo/"/>
+    <url>/2022/12/10/hello-hexo/</url>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
     
