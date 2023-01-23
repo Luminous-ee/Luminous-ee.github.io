@@ -16,24 +16,24 @@
   <meta name="author" content="落与">
   <meta name="keywords" content="computer">
   
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+    <meta name="description" content="基本数据类型 数字类型及操作  数字类型  数字类型可以自动“拓宽”：整数→浮点数→复数   整数  4 种进制表示（十进制、二进制、八进制、十六进制）  浮点数   浮点数运算存在不确定尾数 浮点数可采用科学记数法表示   复数  数值运算操作符  x+y | x-y | x*y | x&#x2F;y | x&#x2F;&#x2F;y | x%y | x**y | +x |">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello Hexo">
-<meta property="og:url" content="https://luminous-ee.github.io/2022/12/11/hello-hexo/index.html">
+<meta property="og:title" content="Python基础（二）：基本数据类型">
+<meta property="og:url" content="https://luminous-ee.github.io/2023/01/22/Python%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%9A%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/index.html">
 <meta property="og:site_name" content="Luminous">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta property="og:description" content="基本数据类型 数字类型及操作  数字类型  数字类型可以自动“拓宽”：整数→浮点数→复数   整数  4 种进制表示（十进制、二进制、八进制、十六进制）  浮点数   浮点数运算存在不确定尾数 浮点数可采用科学记数法表示   复数  数值运算操作符  x+y | x-y | x*y | x&#x2F;y | x&#x2F;&#x2F;y | x%y | x**y | +x |">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-12-11T04:30:28.000Z">
-<meta property="article:modified_time" content="2023-01-16T08:35:07.171Z">
+<meta property="article:published_time" content="2023-01-22T09:28:42.000Z">
+<meta property="article:modified_time" content="2023-01-22T14:04:49.948Z">
 <meta property="article:author" content="落与">
-<meta property="article:tag" content="博客">
+<meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Hello Hexo - Luminous</title>
+  <title>Python基础（二）：基本数据类型 - Luminous</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -232,7 +232,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Hello Hexo"></span>
+            <span id="subtitle" data-typed-text="Python基础（二）：基本数据类型"></span>
           
         </div>
 
@@ -243,8 +243,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-12-11 12:30" pubdate>
-          2022年12月11日 下午
+        <time datetime="2023-01-22 17:28" pubdate>
+          2023年1月22日 下午
         </time>
       </span>
     
@@ -255,7 +255,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          363 字
+          2k 字
         
       </span>
     
@@ -266,7 +266,7 @@
         
         
         
-          4 分钟
+          17 分钟
         
       </span>
     
@@ -304,34 +304,184 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Hello Hexo</h1>
+            <h1 style="display: none">Python基础（二）：基本数据类型</h1>
             
             
               <div class="markdown-body">
                 
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very
-first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for
-more info. If you get any problems when using Hexo, you can find the
-answer in <a
-target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
-you can ask me on <a
-target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="quick-start">Quick Start</h2>
-<h3 id="create-a-new-post">Create a new post</h3>
-<div class="code-wrapper"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span></code></pre></div>
-<p>More info: <a
-target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server">Run server</h3>
-<div class="code-wrapper"><pre><code class="hljs bash">$ hexo server</code></pre></div>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files">Generate static files</h3>
-<div class="code-wrapper"><pre><code class="hljs bash">$ hexo generate</code></pre></div>
-<p>More info: <a
-target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
-<div class="code-wrapper"><pre><code class="hljs bash">$ hexo deploy</code></pre></div>
-<p>More info: <a
-target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+                <h1 id="基本数据类型">基本数据类型</h1>
+<h2 id="数字类型及操作">数字类型及操作</h2>
+<ol type="1">
+<li><p>数字类型</p>
+<blockquote>
+<p>数字类型可以自动“拓宽”：<em>整数→浮点数→复数</em></p>
+</blockquote>
+<ul>
+<li><p>整数</p>
+<blockquote>
+<p>4 种进制表示（十进制、二进制、八进制、十六进制）</p>
+</blockquote></li>
+<li><p>浮点数</p>
+<blockquote>
+<ol type="a">
+<li><p>浮点数运算存在不确定尾数</p></li>
+<li><p>浮点数可采用科学记数法表示</p></li>
+</ol>
+</blockquote></li>
+<li><p>复数</p></li>
+</ul></li>
+<li><p>数值运算操作符</p>
+<ul>
+<li><p><code>x+y</code> | <code>x-y</code> | <code>x*y</code> |
+<code>x/y</code> | <code>x//y</code> | <code>x%y</code> |
+<code>x**y</code> | <code>+x</code> | <code>-x</code></p></li>
+<li><p><code>x op y</code></p>
+<blockquote>
+<p>op为二元操作符，例如 <code>x += y</code></p>
+</blockquote></li>
+</ul></li>
+<li><p>数值运算函数</p>
+<ul>
+<li><p><code>abs(x) | pow(x,y[,z]) | divmod(x,y) | round(x,[,d]) | max(a,b,...) | min(a,b,...)</code></p>
+<blockquote>
+<ol type="a">
+<li><p><code>[ ]</code> 表示参数可以省略</p></li>
+<li><p><code>divmod(x,y)</code>
+同时输出<strong>商和余数</strong></p></li>
+<li><p><code>pow(x,y[,z])</code> 计算 <code>(x**y)%z</code></p></li>
+<li><p><code>round(x[,d])</code> 四舍五入，d 是保留小数位数</p></li>
+</ol>
+</blockquote></li>
+<li><p><code>int(x) | float(x) | complex(x)</code></p>
+<blockquote>
+<p>数字类型的显式转换</p>
+</blockquote></li>
+</ul></li>
+</ol>
+<h2 id="字符串类型及操作">字符串类型及操作</h2>
+<ol type="1">
+<li><p>字符串类型</p>
+<ul>
+<li><p>如何表示</p>
+<blockquote>
+<p>一对单引号，一对双引号，一对三单引号，一对三双引号</p>
+</blockquote></li>
+<li><p>操作符：<code>x+y | x*n 或 n*x | x in s</code></p>
+<blockquote>
+<ol type="1">
+<li><p><code>x*n</code> 或 <code>n*x</code>：复制 n 次字符串 x</p></li>
+<li><p><code>x in s</code>：判断 x 是 s 的子串</p></li>
+</ol>
+</blockquote></li>
+</ul></li>
+<li><p>处理字符串的函数</p>
+<ul>
+<li><p><code>len(s) | str(x) | hex(x) | oct(x)</code></p>
+<blockquote>
+<p><code>hex(x)</code> 与 <code>oct(x)</code>：整数 x
+的八进制与十六进制小写形式字符串。</p>
+</blockquote></li>
+<li><p><code>chr(u) | ord(x)</code></p>
+<blockquote>
+<ol type="1">
+<li><p>u 为 Unicode 编码，<code>chr(u)</code> 返回对应的字符</p></li>
+<li><p>x 为字符，<code>ord(x)</code> 返回对应的 Unicode 编码</p></li>
+</ol>
+</blockquote></li>
+</ul></li>
+<li><p>字符串处理方法</p>
+<ul>
+<li><p><code>.lower() | .upper() | .split(sep) | .count(sub) | .replace(old,new)</code></p></li>
+<li><p><code>.center(width[,fillchar]) | .strip(chars) | .join(iter)</code></p></li>
+<li><p>字符串格式化</p>
+<ul>
+<li><p><code>&lt;模板字符串&gt;.format(&lt;逗号分隔的参数&gt;)</code></p></li>
+<li><p>槽： 用 <code>&#123;&#125;</code> 表示槽，如下图：</p>
+<p><img
+src="https://cdn.jsdelivr.net/gh/Luminous-ee/ImgBed/photos/202301222146755.jpg" srcset="/img/loading.gif" lazyload /></p>
+<ul>
+<li><p>槽内部的写法：<code>&#123;&lt;参数序号&gt;:&lt;格式控制标记&gt;&#125;</code></p></li>
+<li><p>槽内部的格式控制标记：</p>
+<p><img
+src="https://cdn.jsdelivr.net/gh/Luminous-ee/ImgBed/photos/202301222147456.jpg" srcset="/img/loading.gif" lazyload /></p></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ol>
+<h2 id="思维导图">思维导图</h2>
+<p><img
+src="https://cdn.jsdelivr.net/gh/Luminous-ee/ImgBed/photos/202301222147552.png" srcset="/img/loading.gif" lazyload /></p>
+<h1 id="tips">Tips</h1>
+<ol type="1">
+<li><p>字符串处理方法</p>
+<table>
+
+<thead>
+<tr class="header">
+<th><code>.lower()</code> 与 <code>.upper()</code></th>
+<th>返回字符串的副本，全部字符转为小写/大写</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>.count(sub)</code></td>
+<td>返回子串sub在str中出现的次数</td>
+</tr>
+<tr class="even">
+<td><code>.replace(old,new)</code></td>
+<td>返回字符串的副本，所有old子串被替换为new</td>
+</tr>
+<tr class="odd">
+<td><code>.center(width[,fillchar])</code></td>
+<td>让字符串根据宽度width居中，fillchar是用于填充的符号</td>
+</tr>
+<tr class="even">
+<td><code>.strip(chars)</code></td>
+<td>删除字符串两端的空格或指定字符chars。<code>"123abob321".strip('12')</code>结果为<code>3abob3</code></td>
+</tr>
+<tr class="odd">
+<td><code>.split(sep)</code></td>
+<td>以sep分割字符串，返回列表，<code>"A,B,C".split(",")</code>
+结果为<code>['A','B','C']</code></td>
+</tr>
+<tr class="even">
+<td><code>.join(iter)</code></td>
+<td>联结字符串元素。<code>"-".join("12345")</code>结果为<code>1-2-3-4-5</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>split：分开，join：联合</p>
+</blockquote></li>
+<li><p>字符串的格式化输出
+<code>.format()</code>，对槽的内部控制格式加深理解</p>
+<p><img
+src="https://cdn.jsdelivr.net/gh/Luminous-ee/ImgBed/photos/202301222147456.jpg" srcset="/img/loading.gif" lazyload /></p>
+<p><div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-comment">#eg1</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;工作日的努力参数是: &#123;:.3f&#125;&quot;</span>.<span class="hljs-built_in">format</span>(dayfac))
+<span class="hljs-comment">#eg2</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;\r&#123;:^3.0f&#125;%[&#123;&#125;-&gt;&#123;&#125;]&#123;:.2f&#125;s&quot;</span>.<span class="hljs-built_in">format</span>(c,a,b,d) ,end=<span class="hljs-string">&quot;&quot;</span>)
+<span class="hljs-comment">#eg3</span>
+N = <span class="hljs-built_in">eval</span>(<span class="hljs-built_in">input</span>())
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>,N+<span class="hljs-number">1</span>,<span class="hljs-number">2</span>): <span class="hljs-comment"># 从1到N，步长为2</span>
+    <span class="hljs-comment">#print((&#x27;*&#x27;*i).center(N,&#x27; &#x27;)) # 一种方式</span>
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;&#123;:^&#123;&#125;&#125;&quot;</span>.<span class="hljs-built_in">format</span>(<span class="hljs-string">&#x27;*&#x27;</span>*i,N)) <span class="hljs-comment"># 另一种方式</span>
+    <span class="hljs-comment"># 注意如果用print(&quot;&#123;:^N&#125;&quot;.format(&#x27;*&#x27;*i))是错误的</span></code></pre></div></p></li>
+<li><p>Python 没有字符类型，不能直接进行字符加减运算，需借助
+<code>chr(u)</code> 和 <code>ord(x)</code> 函数</p>
+<p><div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-comment">#凯撒密码加密</span>
+plaintext = <span class="hljs-built_in">input</span>()
+ciphertext = <span class="hljs-string">&quot;&quot;</span>
+<span class="hljs-keyword">for</span> p <span class="hljs-keyword">in</span> plaintext:
+    <span class="hljs-keyword">if</span> <span class="hljs-string">&#x27;a&#x27;</span> &lt;= p &lt;= <span class="hljs-string">&#x27;z&#x27;</span>: <span class="hljs-comment"># 字符串比较</span>
+        **c = <span class="hljs-built_in">chr</span>(((<span class="hljs-built_in">ord</span>(p)-<span class="hljs-built_in">ord</span>(<span class="hljs-string">&#x27;a&#x27;</span>))+<span class="hljs-number">3</span>)%<span class="hljs-number">26</span>+<span class="hljs-built_in">ord</span>(<span class="hljs-string">&#x27;a&#x27;</span>))**
+    <span class="hljs-keyword">elif</span> <span class="hljs-string">&#x27;A&#x27;</span> &lt;= p &lt;= <span class="hljs-string">&#x27;Z&#x27;</span>: <span class="hljs-comment"># 字符串比较</span>
+        **c = <span class="hljs-built_in">chr</span>(((<span class="hljs-built_in">ord</span>(p)-<span class="hljs-built_in">ord</span>(<span class="hljs-string">&#x27;A&#x27;</span>))+<span class="hljs-number">3</span>)%<span class="hljs-number">26</span>+<span class="hljs-built_in">ord</span>(<span class="hljs-string">&#x27;A&#x27;</span>))**
+    <span class="hljs-keyword">else</span>:
+        c = p
+    ciphertext += c
+<span class="hljs-built_in">print</span>(ciphertext)</code></pre></div></p></li>
+</ol>
 
                 
               </div>
@@ -350,7 +500,7 @@ target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment
     
       <span class="category-chain">
         
-  <a href="/categories/%E5%8D%9A%E5%AE%A2/" class="category-chain-item">博客</a>
+  <a href="/categories/Python%E5%9F%BA%E7%A1%80/" class="category-chain-item">Python基础</a>
   
   
 
@@ -365,7 +515,7 @@ target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E5%8D%9A%E5%AE%A2/">#博客</a>
+        <a href="/tags/Python/">#Python</a>
       
     </div>
   
@@ -377,8 +527,8 @@ target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Hello Hexo</div>
-      <div>https://luminous-ee.github.io/2022/12/11/hello-hexo/</div>
+      <div>Python基础（二）：基本数据类型</div>
+      <div>https://luminous-ee.github.io/2023/01/22/Python基础（二）：基本数据类型/</div>
     </div>
     <div class="license-meta">
       
@@ -390,7 +540,7 @@ target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年12月11日</div>
+          <div>2023年1月22日</div>
         </div>
       
       
@@ -422,9 +572,9 @@ target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/01/13/Gridea-GitHub-Pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/" title="Gridea+GitHub Pages搭建个人静态博客">
+                      <a href="/2023/01/23/Python-%E4%B8%8E-Packages%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%9Atime%E5%BA%93/" title="Python 与 Packages（二）：time库">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Gridea+GitHub Pages搭建个人静态博客</span>
+                        <span class="hidden-mobile">Python 与 Packages（二）：time库</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -432,8 +582,8 @@ target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/12/11/hello-gridea/" title="hello-gridea">
-                        <span class="hidden-mobile">hello-gridea</span>
+                      <a href="/2023/01/20/Python-%E4%B8%8E-Packages%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9Aturtle%E5%BA%93/" title="Python 与 Packages（一）：turtle库">
+                        <span class="hidden-mobile">Python 与 Packages（一）：turtle库</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -446,7 +596,7 @@ target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment
             
   <article id="comments" lazyload>
     
-  <div id="SOHUCS" sid='https://luminous-ee.github.io/2022/12/11/hello-hexo/'></div>
+  <div id="SOHUCS" sid='https://luminous-ee.github.io/2023/01/22/Python%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%9A%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/'></div>
   <script type="text/javascript">
     Fluid.utils.loadComments('#SOHUCS', function() {
       Fluid.utils.createScript("https://changyan.sohu.com/upload/changyan.js", function() {
