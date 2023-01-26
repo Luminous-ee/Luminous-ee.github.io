@@ -16,26 +16,24 @@
   <meta name="author" content="落与">
   <meta name="keywords" content="computer">
   
-    <meta name="description" content="基本绘图体系——turtle  turtle库介绍  窗体   turtle.setup(width,height,startx,starty)  坐标  绝对坐标   turtle.goto(x,y)  海龟坐标  角度坐标(绝对角度)   turtle.seth(angle)   色彩  turtle库函数  画笔控制  penup(">
+    <meta name="description" content="OS库  os 库是 Python 标准库，包含几百个函数，包括了常用路径操作、进程管理、环境参数等几类。   os.path 模块：主要用于获取文件的属性。     函数 作用     os.path.abspath(path) 返回绝对路径   os.path.normpath(path) 规范 path 的字符串形式，统一用\\分隔路径">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python 与 Packages（一）：turtle库">
-<meta property="og:url" content="https://luminous-ee.github.io/2023/01/20/Python-%E4%B8%8E-Packages%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9Aturtle%E5%BA%93/index.html">
+<meta property="og:title" content="Python 与 Packages（六）：os库">
+<meta property="og:url" content="https://luminous-ee.github.io/2023/01/29/Python-%E4%B8%8E-Packages%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9Aos%E5%BA%93/index.html">
 <meta property="og:site_name" content="Luminous">
-<meta property="og:description" content="基本绘图体系——turtle  turtle库介绍  窗体   turtle.setup(width,height,startx,starty)  坐标  绝对坐标   turtle.goto(x,y)  海龟坐标  角度坐标(绝对角度)   turtle.seth(angle)   色彩  turtle库函数  画笔控制  penup(">
+<meta property="og:description" content="OS库  os 库是 Python 标准库，包含几百个函数，包括了常用路径操作、进程管理、环境参数等几类。   os.path 模块：主要用于获取文件的属性。     函数 作用     os.path.abspath(path) 返回绝对路径   os.path.normpath(path) 规范 path 的字符串形式，统一用\\分隔路径">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://docs.python.org/3.9/_images/turtle-star.png">
-<meta property="article:published_time" content="2023-01-20T14:12:49.000Z">
-<meta property="article:modified_time" content="2023-01-26T08:32:29.520Z">
+<meta property="article:published_time" content="2023-01-29T08:24:44.000Z">
+<meta property="article:modified_time" content="2023-01-26T08:30:04.017Z">
 <meta property="article:author" content="落与">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://docs.python.org/3.9/_images/turtle-star.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Python 与 Packages（一）：turtle库 - Luminous</title>
+  <title>Python 与 Packages（六）：os库 - Luminous</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -234,7 +232,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Python 与 Packages（一）：turtle库"></span>
+            <span id="subtitle" data-typed-text="Python 与 Packages（六）：os库"></span>
           
         </div>
 
@@ -245,8 +243,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-01-20 22:12" pubdate>
-          2023年1月20日 晚上
+        <time datetime="2023-01-29 16:24" pubdate>
+          2023年1月29日 下午
         </time>
       </span>
     
@@ -268,7 +266,7 @@
         
         
         
-          12 分钟
+          11 分钟
         
       </span>
     
@@ -306,165 +304,134 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Python 与 Packages（一）：turtle库</h1>
+            <h1 style="display: none">Python 与 Packages（六）：os库</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="基本绘图体系turtle">基本绘图体系——turtle</h1>
-<p><img src="https://docs.python.org/3.9/_images/turtle-star.png" srcset="/img/loading.gif" lazyload /></p>
-<h2 id="turtle库介绍">turtle库介绍</h2>
+                <h1 id="os库">OS库</h1>
+<blockquote>
+<p>os 库是 Python
+<strong>标准库</strong>，包含几百个函数，包括了常用路径操作、进程管理、环境参数等几类。</p>
+</blockquote>
 <ol type="1">
-<li><p>窗体</p>
-<p><img
-src="https://cdn.jsdelivr.net/gh/Luminous-ee/ImgBed/photos/202301202242318.jpg" srcset="/img/loading.gif" lazyload /></p>
-<blockquote>
-<p><code>turtle.setup(width,height,startx,starty)</code></p>
-</blockquote></li>
-<li><p>坐标</p>
-<ul>
-<li><p>绝对坐标</p>
-<p><img
-src="https://cdn.jsdelivr.net/gh/Luminous-ee/ImgBed/photos/202301202242075.jpg" srcset="/img/loading.gif" lazyload /></p>
-<blockquote>
-<p><code>turtle.goto(x,y)</code></p>
-</blockquote></li>
-<li><p>海龟坐标</p>
-<p><img
-src="https://cdn.jsdelivr.net/gh/Luminous-ee/ImgBed/photos/202301202243067.jpg" srcset="/img/loading.gif" lazyload /></p></li>
-<li><p>角度坐标(绝对角度)</p>
-<p><img
-src="https://cdn.jsdelivr.net/gh/Luminous-ee/ImgBed/photos/202301202243987.jpg" srcset="/img/loading.gif" lazyload /></p>
-<blockquote>
-<p><code>turtle.seth(angle)</code></p>
-</blockquote></li>
-</ul></li>
-<li><p>色彩</p></li>
-</ol>
-<h2 id="turtle库函数">turtle库函数</h2>
-<ol type="1">
-<li><p>画笔控制</p>
-<ul>
-<li><p><code>penup() | pu()</code> 抬笔</p></li>
-<li><p><code>pendown() | pd()</code> 落笔</p></li>
-<li><p><code>pensize() | width()</code> 粗细</p></li>
-<li><p><code>pencolor()</code> 颜色</p>
-<blockquote>
-<p>pencolor()的3种形式</p>
-<blockquote>
-<p>pencolor("purple")</p>
-<p>pencolor(r,g,b)</p>
-<p>pencolor((r,g,b))</p>
-</blockquote>
-</blockquote></li>
-</ul></li>
-<li><p>运动控制</p>
-<ul>
-<li><p><code>forward() | fd()</code></p>
-<blockquote>
-<p>海龟前进 distance 指定的距离，方向为海龟的朝向。</p>
-</blockquote></li>
-<li><p><code>backward() | back() | bk()</code></p>
-<blockquote>
-<p>海龟后退 distance 指定的距离，方向与海龟的朝向相反。</p>
-</blockquote></li>
-<li><p><code>circle()</code></p>
-<blockquote>
-<p><code>circle(radius, extent)</code> 绘制一个 radius
-指定半径的圆。</p>
-<p>圆心在海龟左边 radius 个单位；extent
-为一个夹角，用来决定绘制圆的一部分。</p>
-</blockquote></li>
-<li><p><code>goto() | setpos() | setposition()</code></p>
-<blockquote>
-<p>海龟移动到一个绝对坐标
-(x,y)。如果画笔落下将会画线。不改变海龟的朝向。</p>
-</blockquote></li>
-<li><p><code>home()</code></p>
-<blockquote>
-<p>海龟移至初始坐标 (0,0)，并设置朝向为初始方向。</p>
-</blockquote></li>
-<li><p><code>speed()</code></p>
-<blockquote>
-<p>设置海龟移动的速度为 0..10 表示的整型数值。</p>
-<p>速度值从 1 到 10，画线和海龟转向的动画效果逐级加快。speed = 0
-表示没有 动画效果。</p>
-</blockquote></li>
-</ul></li>
-<li><p>方向控制</p>
-<ul>
-<li><p><code>setheading() | seth()</code></p>
-<blockquote>
-<p>设置海龟的朝向为 angle。angle 为绝对角度。</p>
-</blockquote></li>
-<li><p><code>right() | rt()</code></p>
-<blockquote>
-<p>海龟右转 angle 个单位。(单位默认为角度)</p>
-</blockquote></li>
-<li><p><code>left() | lt()</code></p>
-<blockquote>
-<p>海龟左转 angle 个单位。</p>
-</blockquote></li>
-</ul></li>
-</ol>
-<blockquote>
-<p>思维导图</p>
-<p><img
-src="https://cdn.jsdelivr.net/gh/Luminous-ee/ImgBed/photos/202301202244216.png" srcset="/img/loading.gif" lazyload /></p>
-</blockquote>
-<h1 id="tips">Tips</h1>
-<ol type="1">
-<li><p>turtle 库</p>
-<p>turtle 库是 Python 的标准库之一，属于入门级的图形绘制函数库；</p>
-<blockquote>
-<p>Python 计算生态 = 标准库 + 第三方库</p>
-<blockquote>
-<p>标准库：随 Pyhton 解释器直接安装的功能模块。</p>
-<p>第三方库：需要经过安装才能使用的功能模块。</p>
-</blockquote>
-</blockquote>
-<p>帮助文档：<a
-target="_blank" rel="noopener" href="https://docs.python.org/3.9/library/turtle.html">turtle - Turtle
-graphics</a></p></li>
-<li><p>导入库的方法</p>
-<ul>
-<li><code>import turtle</code> 或 <code>from turtle import *</code>
-<ul>
-<li>相同：都是引入 turtle 库中的所有方法</li>
-<li>不同：第一种方式下需使用
-<code>turtle.fd()</code>，第二种方式直接使用 <code>fd()</code>
-即可。</li>
-</ul></li>
-<li><code>import turtle as t</code></li>
-</ul></li>
-<li><p>循环语句与 range() 函数</p>
-<ul>
-<li><p><code>for</code> 循环</p>
-<p><div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-comment">#一般格式</span>
-<span class="hljs-keyword">for</span> &lt;variable&gt; <span class="hljs-keyword">in</span> &lt;sequence&gt;:
-&lt;statements&gt;
+<li><p><code>os.path</code> 模块：主要用于获取文件的属性。</p>
+<table>
 
-<span class="hljs-comment">#实例</span>
-&gt;&gt;&gt;languages = [<span class="hljs-string">&quot;C&quot;</span>, <span class="hljs-string">&quot;C++&quot;</span>, <span class="hljs-string">&quot;Python&quot;</span>] 
-<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> languages:
-<span class="hljs-meta">... </span>    <span class="hljs-built_in">print</span> (x)
-<span class="hljs-meta">... </span>
-C
-C++
-Python</code></pre></div></p></li>
-<li><p><code>range()</code> 函数：产生循环计数序列</p>
-<ul>
-<li><code>range(n)</code>，产生 0 到 n-1
-的整数序列，<code>for i in range(5):</code></li>
-<li><code>range(m,n)</code>，产生 m 到 n-1
-的整数序列，<code>for i in range(5,9) :</code></li>
-<li><code>range(m,n,q)</code>，产生 m 到 n-1 的整数序列，步长为
-q，<code>for i in range(0,11,2) :</code></li>
-</ul></li>
-</ul></li>
+<thead>
+<tr class="header">
+<th style="text-align: center;">函数</th>
+<th style="text-align: center;">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><code>os.path.abspath(path)</code></td>
+<td style="text-align: center;">返回绝对路径</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>os.path.normpath(path)</code></td>
+<td style="text-align: center;">规范 path
+的字符串形式，统一用<code>\\</code>分隔路径</td>
+</tr>
+<tr class="odd">
+<td
+style="text-align: center;"><code>os.path.relpath(path[, start])</code></td>
+<td style="text-align: center;">返回从 start 开始计算的相对路径</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>os.path.basename(path)</code></td>
+<td style="text-align: center;">返回文件名</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>os.path.dirname(path)</code></td>
+<td style="text-align: center;">返回文件路径（即文件所在目录）</td>
+</tr>
+<tr class="even">
+<td
+style="text-align: center;"><code>os.path.join(path1[, path2[, ...]])</code></td>
+<td style="text-align: center;">把路径组合成一个路径字符串</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>os.path.exists(path)</code></td>
+<td style="text-align: center;">判断路径存在则返回 True，路径损坏返回
+False</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>os.path.isfile(path)</code></td>
+<td style="text-align: center;">判断路径是否为文件</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>os.path.isdir(path)</code></td>
+<td style="text-align: center;">判断路径是否为目录</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>os.path.getatime(path)</code></td>
+<td style="text-align: center;">返回最近访问时间（浮点型秒数）</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>os.path.getmtime(path)</code></td>
+<td style="text-align: center;">返回最近修改时间</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>os.path.getctime(path)</code></td>
+<td style="text-align: center;">返回文件创建时间</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>os.path.getsize(path)</code></td>
+<td
+style="text-align: center;">返回文件大小，如果文件不存在就返回错误</td>
+</tr>
+</tbody>
+</table></li>
+<li><p><code>os.system(command)</code>：执行程序或系统命令
+command</p></li>
+<li><p>环境参数</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">函数</th>
+<th style="text-align: center;">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><code>os.chdir(path)</code></td>
+<td style="text-align: center;">改变当前工作目录到指定的路径 path</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>os.getcwd()</code></td>
+<td style="text-align: center;">返回当前工作目录</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>os.getlogin()</code></td>
+<td style="text-align: center;">获取当前系统登录用户名称</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>os.cpu_count()</code></td>
+<td style="text-align: center;">获取当前系统的 CPU 数量</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>os.urandom(n)</code></td>
+<td style="text-align: center;">获得 n
+个字节长度的随机字符串，通常用于加解密运算</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>实例：第三方库自动安装脚本</p>
+<p><div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> os
+
+lib = &#123;<span class="hljs-string">&quot;numpy&quot;</span>, <span class="hljs-string">&quot;matplotlib&quot;</span>, <span class="hljs-string">&quot;pillow&quot;</span>, <span class="hljs-string">&quot;sklearn&quot;</span>, <span class="hljs-string">&quot;requests&quot;</span>, \
+        <span class="hljs-string">&quot;jieba&quot;</span>, <span class="hljs-string">&quot;beautifulsoup4&quot;</span>, <span class="hljs-string">&quot;wheel&quot;</span>, <span class="hljs-string">&quot;networkx&quot;</span>, <span class="hljs-string">&quot;sympy&quot;</span>, \
+        <span class="hljs-string">&quot;pyinstaller&quot;</span>, <span class="hljs-string">&quot;django&quot;</span>, <span class="hljs-string">&quot;flask&quot;</span>, <span class="hljs-string">&quot;werobot&quot;</span>, <span class="hljs-string">&quot;pyqt5&quot;</span>, \
+        <span class="hljs-string">&quot;pandas&quot;</span>, <span class="hljs-string">&quot;pyopengl&quot;</span>, <span class="hljs-string">&quot;pypdf2&quot;</span>, <span class="hljs-string">&quot;docopt&quot;</span>, <span class="hljs-string">&quot;pygame&quot;</span>&#125;
+<span class="hljs-keyword">try</span>:
+    <span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> lib:
+        os.system(<span class="hljs-string">&quot;pip3 install &quot;</span> + item)
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;successfully&quot;</span>)
+<span class="hljs-keyword">except</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;failed&quot;</span>)</code></pre></div></p></li>
 </ol>
-<p><img
-src="https://cdn.jsdelivr.net/gh/Luminous-ee/ImgBed/photos/202301202312733.jpg" srcset="/img/loading.gif" lazyload /></p>
 
                 
               </div>
@@ -510,8 +477,8 @@ src="https://cdn.jsdelivr.net/gh/Luminous-ee/ImgBed/photos/202301202312733.jpg" 
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Python 与 Packages（一）：turtle库</div>
-      <div>https://luminous-ee.github.io/2023/01/20/Python-与-Packages（一）：turtle库/</div>
+      <div>Python 与 Packages（六）：os库</div>
+      <div>https://luminous-ee.github.io/2023/01/29/Python-与-Packages（六）：os库/</div>
     </div>
     <div class="license-meta">
       
@@ -523,7 +490,7 @@ src="https://cdn.jsdelivr.net/gh/Luminous-ee/ImgBed/photos/202301202312733.jpg" 
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年1月20日</div>
+          <div>2023年1月29日</div>
         </div>
       
       
@@ -555,9 +522,9 @@ src="https://cdn.jsdelivr.net/gh/Luminous-ee/ImgBed/photos/202301202312733.jpg" 
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/01/22/Python%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%9A%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" title="Python基础（二）：基本数据类型">
+                      <a href="/2023/01/30/Python%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B9%9D%EF%BC%89%EF%BC%9APython%E8%AE%A1%E7%AE%97%E7%94%9F%E6%80%81%E6%A6%82%E8%A7%88/" title="Python基础（九）：Python计算生态概览">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Python基础（二）：基本数据类型</span>
+                        <span class="hidden-mobile">Python基础（九）：Python计算生态概览</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -565,8 +532,8 @@ src="https://cdn.jsdelivr.net/gh/Luminous-ee/ImgBed/photos/202301202312733.jpg" 
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/01/19/Python%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E5%85%83%E7%B4%A0/" title="Python基础（一）：基本语法元素">
-                        <span class="hidden-mobile">Python基础（一）：基本语法元素</span>
+                      <a href="/2023/01/28/Python%E5%9F%BA%E7%A1%80%EF%BC%88%E5%85%AB%EF%BC%89%EF%BC%9A%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95%E5%AD%A6/" title="Python基础（八）：程序设计方法学">
+                        <span class="hidden-mobile">Python基础（八）：程序设计方法学</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -579,7 +546,7 @@ src="https://cdn.jsdelivr.net/gh/Luminous-ee/ImgBed/photos/202301202312733.jpg" 
             
   <article id="comments" lazyload>
     
-  <div id="SOHUCS" sid='https://luminous-ee.github.io/2023/01/20/Python-%E4%B8%8E-Packages%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9Aturtle%E5%BA%93/'></div>
+  <div id="SOHUCS" sid='https://luminous-ee.github.io/2023/01/29/Python-%E4%B8%8E-Packages%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9Aos%E5%BA%93/'></div>
   <script type="text/javascript">
     Fluid.utils.loadComments('#SOHUCS', function() {
       Fluid.utils.createScript("https://changyan.sohu.com/upload/changyan.js", function() {

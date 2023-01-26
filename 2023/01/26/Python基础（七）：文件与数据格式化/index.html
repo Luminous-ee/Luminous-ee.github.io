@@ -1,0 +1,1055 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/bell.png">
+  <link rel="icon" href="/img/bell.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="落与">
+  <meta name="keywords" content="computer">
+  
+    <meta name="description" content="文件和数据格式化 7.1 文件 7.1.1 文件类型  文件是数据的抽象和集合 文件的展示方式  本质上，文件都是二进制存储 形式上，文件有两种展示方式  文本文件：由单一特定编码组成的文件，也被看成是存储的长字符串，例如 txt 文件、.py 文件。 二进制文件：二进制 01 组成，没有统一字符编码，例如 .png 文件。    7.1.2 文件的打开与关闭">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python基础（七）：文件与数据格式化">
+<meta property="og:url" content="https://luminous-ee.github.io/2023/01/26/Python%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%83%EF%BC%89%EF%BC%9A%E6%96%87%E4%BB%B6%E4%B8%8E%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F%E5%8C%96/index.html">
+<meta property="og:site_name" content="Luminous">
+<meta property="og:description" content="文件和数据格式化 7.1 文件 7.1.1 文件类型  文件是数据的抽象和集合 文件的展示方式  本质上，文件都是二进制存储 形式上，文件有两种展示方式  文本文件：由单一特定编码组成的文件，也被看成是存储的长字符串，例如 txt 文件、.py 文件。 二进制文件：二进制 01 组成，没有统一字符编码，例如 .png 文件。    7.1.2 文件的打开与关闭">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-01-26T06:22:14.000Z">
+<meta property="article:modified_time" content="2023-01-26T07:47:32.568Z">
+<meta property="article:author" content="落与">
+<meta property="article:tag" content="Python">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>Python基础（七）：文件与数据格式化 - Luminous</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"luminous-ee.github.io","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":21532833,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <!-- 51.la Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript('//js.users.51.la/21532833.js');
+      }
+    </script>
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Luminous</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Python基础（七）：文件与数据格式化"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-01-26 14:22" pubdate>
+          2023年1月26日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          5.6k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          47 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Python基础（七）：文件与数据格式化</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="文件和数据格式化">文件和数据格式化</h1>
+<h2 id="文件">7.1 文件</h2>
+<h3 id="文件类型">7.1.1 文件类型</h3>
+<ol type="1">
+<li><p><strong>文件是数据的抽象和集合</strong></p></li>
+<li><p>文件的展示方式</p>
+<ul>
+<li>本质上，文件都是二进制存储</li>
+<li>形式上，文件有两种展示方式
+<ul>
+<li>文本文件：由单一特定编码组成的文件，也被看成是存储的长字符串，例如
+txt 文件、.py 文件。</li>
+<li>二进制文件：二进制 01 组成，没有统一字符编码，例如 .png 文件。</li>
+</ul></li>
+</ul></li>
+</ol>
+<h3 id="文件的打开与关闭">7.1.2 文件的打开与关闭</h3>
+<ol type="1">
+<li><p>打开文件：</p>
+<ul>
+<li><p><code>open(filename, mode='r')</code>
+打开一个文件，并返回文件对象。</p>
+<ul>
+<li><code>filename</code>: 必需，文件路径（相对路径或绝对路径）。</li>
+<li><code>mode</code>: 可选，文件打开模式</li>
+</ul></li>
+<li><p>文件打开模式（<code>mode</code> 参数）</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">参数</th>
+<th style="text-align: center;">模式</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">"r"</td>
+<td style="text-align: center;">只读模式（默认）</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">"w"</td>
+<td
+style="text-align: center;">覆盖写，文件不存在则创建，存在则覆盖</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">"x"</td>
+<td
+style="text-align: center;">创建写，文件不存在则创建，存在则报错</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">"a"</td>
+<td
+style="text-align: center;">追加写，文件不存在则创建，存在则追加</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">"t"</td>
+<td style="text-align: center;">文本模式（默认）</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">"b"</td>
+<td style="text-align: center;">二进制模式</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">"+"</td>
+<td style="text-align: center;">与 r/w/x/a
+一起使用，打开一个文件进行更新(可读可写)。</td>
+</tr>
+</tbody>
+</table></li>
+</ul></li>
+<li><p>关闭文件：</p>
+<ul>
+<li><p><code>fileObject.close()</code> 关闭一个已打开的文件。</p>
+<ul>
+<li>关闭后的文件不能再进行读写操作，</li>
+<li>没有参数，没有返回值</li>
+</ul></li>
+</ul>
+<blockquote>
+<p>python对文件的操作步骤：打开→操作→关闭</p>
+<p>打开文件后采用 <code>close()</code> 关闭文件是一个好习惯。如果不调用
+<code>close()</code>，当前 Python
+程序完全运行退出时，该文件引用被释放，即程序退出时，相当于调用了
+<code>close()</code>。</p>
+</blockquote></li>
+</ol>
+<h3 id="文件读取">7.1.3 文件读取</h3>
+<table>
+
+<thead>
+<tr class="header">
+<th style="text-align: center;">函数</th>
+<th style="text-align: center;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><code>file.read(size=-1)</code></td>
+<td
+style="text-align: center;">读取<strong>所有</strong>，作为一个字符串。如果给定
+size 则读取前 size 长度。</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>file.readline(size=-1)</code></td>
+<td style="text-align: center;">读取<strong>整行</strong>，包括 ""
+，如果给定 size 则读取该行的前 size 长度。</td>
+</tr>
+<tr class="odd">
+<td
+style="text-align: center;"><code>file.readlines(sizeint=-1)</code></td>
+<td
+style="text-align: center;">读取<strong>所有行</strong>，以每行为元素<strong>返回列表</strong>，如果给定
+sizeint 则读取前 sizeint 行。</td>
+</tr>
+</tbody>
+</table>
+<div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-comment"># 实例</span>
+
+<span class="hljs-comment"># 遍历全文本：方法一</span>
+<span class="hljs-comment"># 特点：一次读入，统一处理</span>
+file = <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;f1.txt&quot;</span>, <span class="hljs-string">&quot;r&quot;</span>)
+txt = file.read()
+file.close()</code></pre></div>
+<div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-comment"># 遍历全文本，方法二</span>
+<span class="hljs-comment"># 特点：按数量读入，逐步处理</span>
+file = <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;f1.txt&quot;</span>, <span class="hljs-string">&quot;r&quot;</span>)
+txt = file.read(<span class="hljs-number">5</span>)
+<span class="hljs-keyword">while</span> txt != <span class="hljs-string">&quot;&quot;</span>:
+    txt = file.read(<span class="hljs-number">5</span>)
+file.close()</code></pre></div>
+<div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-comment"># 逐行遍历：方法一</span>
+file = <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;f1.txt&quot;</span>, <span class="hljs-string">&quot;r&quot;</span>)
+ls = file.readlines()
+<span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> ls:
+    <span class="hljs-built_in">print</span>(line)
+file.close()
+<span class="hljs-built_in">print</span>(ls)</code></pre></div>
+<div class="code-wrapper"><pre><code class="hljs">Who&#39;s there?
+
+hello
+
+python
+[&quot;Who&#39;s there?\n&quot;, &#39;hello\n&#39;, &#39;python&#39;]  </code></pre></div>
+<div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-comment"># 逐行遍历：方法二</span>
+file = <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;f1.txt&quot;</span>, <span class="hljs-string">&quot;r&quot;</span>)
+ls = []
+<span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> file:  <span class="hljs-comment"># 读取每行为一个字符串</span>
+    <span class="hljs-built_in">print</span>(line)
+    ls.append(line)
+file.close()
+<span class="hljs-built_in">print</span>(ls)</code></pre></div>
+<div class="code-wrapper"><pre><code class="hljs">Who&#39;s there?
+
+hello
+
+python
+[&quot;Who&#39;s there?\n&quot;, &#39;hello\n&#39;, &#39;python&#39;]</code></pre></div>
+<h3 id="文件写入">7.1.4 文件写入</h3>
+<table>
+
+<thead>
+<tr class="header">
+<th style="text-align: center;">函数</th>
+<th style="text-align: center;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><code>file.write(s)</code></td>
+<td style="text-align: center;">将<strong>字符串</strong> s
+写入文件，返回写入的字符长度。</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>file.writelines(lines)</code></td>
+<td
+style="text-align: center;">向文件写入一个<strong>字符串列表</strong>
+lines，如需换行则要自己加入每行的换行符。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>file.tell()</code></td>
+<td style="text-align: center;">返回文件指针的当前位置。</td>
+</tr>
+<tr class="even">
+<td
+style="text-align: center;"><code>file.seek(offset[, whence])</code></td>
+<td style="text-align: center;">将文件指针移动到指定位置。</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><code>file.seek(offset[, whence])</code></p>
+<blockquote>
+<p><code>offset</code> — 偏移量</p>
+<p><code>whence</code> — 从文件哪个位置开始偏移（可选，默认为0）</p>
+<ul>
+<li>0 → 从文件开头开始，1 → 从文件当前位置开始，2 → 从文件结尾开始</li>
+</ul>
+</blockquote>
+</blockquote>
+<div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-comment"># tell()与seek()</span>
+file = <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;f1.txt&quot;</span>, <span class="hljs-string">&quot;rb&quot;</span>)
+<span class="hljs-built_in">print</span>(file.tell())
+file.read(<span class="hljs-number">5</span>)
+<span class="hljs-built_in">print</span>(file.tell())
+file.seek(<span class="hljs-number">20</span>, <span class="hljs-number">1</span>)
+<span class="hljs-built_in">print</span>(file.tell())</code></pre></div>
+<div class="code-wrapper"><pre><code class="hljs">0
+5
+25</code></pre></div>
+<div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-comment"># 注意：Pyhon3 在文本文件中，如果没有使用 b 模式打开文件，</span>
+<span class="hljs-comment"># 那么只允许从文件头开始计算相对位置，从其它位置开始就会引发异常。</span>
+<span class="hljs-comment"># io.UnsupportedOperation: can&#x27;t do nonzero cur-relative seeks</span>
+file = <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;f1.txt&quot;</span>, <span class="hljs-string">&quot;rb&quot;</span>)
+file.read(<span class="hljs-number">5</span>)
+<span class="hljs-built_in">print</span>(file.tell())
+file.seek(<span class="hljs-number">20</span>, <span class="hljs-number">1</span>)</code></pre></div>
+<div class="code-wrapper"><pre><code class="hljs">5
+
+25</code></pre></div>
+<div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-comment"># 实例</span>
+<span class="hljs-comment"># 数据写入到文件的操作</span>
+file = <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;f1.txt&quot;</span>, <span class="hljs-string">&quot;w+&quot;</span>)
+ls = [<span class="hljs-string">&quot;Who&#x27;s there?\n&quot;</span>, <span class="hljs-string">&quot;hello\n&quot;</span>, <span class="hljs-string">&quot;python&quot;</span>]
+file.writelines(ls)
+<span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> file:
+    <span class="hljs-built_in">print</span>(line)
+file.close()
+<span class="hljs-comment"># 没有任何输出</span></code></pre></div>
+<div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-comment"># 修改代码</span>
+file = <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;f1.txt&quot;</span>, <span class="hljs-string">&quot;w+&quot;</span>)
+ls = [<span class="hljs-string">&quot;Who&#x27;s there?\n&quot;</span>, <span class="hljs-string">&quot;hello\n&quot;</span>, <span class="hljs-string">&quot;python&quot;</span>]
+file.writelines(ls)
+<span class="hljs-built_in">print</span>(file.tell())
+file.seek(<span class="hljs-number">0</span>) <span class="hljs-comment"># 文件指针回到文件头</span>
+<span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> file:
+    <span class="hljs-built_in">print</span>(line, end=<span class="hljs-string">&quot;&quot;</span>)  <span class="hljs-comment"># 读取一行会将末尾换行符也读取</span>
+file.close()</code></pre></div>
+<div class="code-wrapper"><pre><code class="hljs">27
+Who&#39;s there?
+hello
+python</code></pre></div>
+<h2 id="一维数据的格式化和处理">7.2 一维数据的格式化和处理</h2>
+<ol type="1">
+<li><p>数据组织的维度</p>
+<ul>
+<li>一维数据：由对等关系的有序或无序数据构成，采用线性方式组织，例如<strong>集合、列表</strong></li>
+<li>二维数据：一维数据的组合形式</li>
+<li>多维数据：由一维或二维数据在新维度的扩展</li>
+<li>高维数据：仅利用最基本的二元关系展示数据的复杂结构，例如<strong>字典</strong></li>
+</ul></li>
+<li><p>一维数据的表示</p>
+<ul>
+<li>数据有序：列表</li>
+<li>数据无序：集合</li>
+</ul></li>
+<li><p>一维数据的存储</p>
+<ul>
+<li>方式一：<strong>空格分隔</strong>进行存储，不换行。缺点：数据中不能有空格</li>
+<li>方式二：<strong>逗号分隔</strong>进行存储，不换行。缺点：数据中不能有逗号</li>
+<li>其他方式：特殊符号或符号组合</li>
+</ul></li>
+<li><p>一维数据的处理：指的是<strong>表示方式与存储方式的相互转换</strong></p></li>
+</ol>
+<div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-comment"># 1.从空格分隔的文件读取数据</span>
+file = <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;data1.txt&quot;</span>, <span class="hljs-string">&quot;r&quot;</span>)
+txt = file.read()
+ls = txt.split()
+file.close()
+ls</code></pre></div>
+<div class="code-wrapper"><pre><code class="hljs">[&#39;Thu&#39;, &#39;Nov&#39;, &#39;17&#39;, &#39;15:13:13&#39;, &#39;2022&#39;]</code></pre></div>
+<div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-comment"># 2.采用空格分隔方式将数据写入文件</span>
+txt = <span class="hljs-string">&quot; &quot;</span>.join(ls)
+file = <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;data1.txt&quot;</span>, <span class="hljs-string">&quot;w&quot;</span>)
+file.write(txt)
+file.close()</code></pre></div>
+<h2 id="二维数据的格式化和处理">7.3 二维数据的格式化和处理</h2>
+<ol type="1">
+<li><p>二维数据的表示</p>
+<ul>
+<li>基本方式：二维列表</li>
+</ul></li>
+<li><p>CSV格式与二维数据的存储</p>
+<ol type="1">
+<li><p><strong>逗号分隔值</strong>（Comma-Separated
+Values，<strong>CSV</strong>）：通用的一二维数据存储格式，<code>.csv</code>
+扩展名</p>
+<ul>
+<li>每行一个一维数据，采用逗号分隔，无空行</li>
+<li>如果某个元素缺失，逗号仍要保留</li>
+<li>英文半角逗号，逗号与数据之间无额外空格</li>
+<li>暂时不考虑数据中出现逗号的情况（加引号、转义符）</li>
+</ul></li>
+<li><p>二维数据的存储：一般索引习惯为<strong>ls[row][column]</strong></p></li>
+</ol></li>
+<li><p>二维数据的处理</p>
+<ul>
+<li>Python 提供了一个读写 csv 的标准库，可以通过 <code>import csv</code>
+使用。csv 库包含操作 CSV 格式最基本的功能，csv.reader 和
+csv.writer().</li>
+<li>由于 CSV 格式十分简单，对于一般程序来说，建议程序员自己编写操作 CSV
+格式的函数，这样更灵活和个性化。</li>
+<li>对于需要运行在复杂环境或商业使用的程序，建议采用 csv 标准库。</li>
+</ul></li>
+</ol>
+<div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-comment"># 从CSV格式的文件读取数据</span>
+ls = []
+file = <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;sample1.csv&quot;</span>, <span class="hljs-string">&quot;r&quot;</span>)
+<span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> file:
+    line = line.replace(<span class="hljs-string">&quot;\n&quot;</span>, <span class="hljs-string">&quot;&quot;</span>)
+    lt = line.split(<span class="hljs-string">&quot;,&quot;</span>)
+    ls.append(lt)
+file.close()
+<span class="hljs-comment"># 打印</span>
+<span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> ls:
+    <span class="hljs-built_in">print</span>(item)</code></pre></div>
+<div class="code-wrapper"><pre><code class="hljs">[&#39;&quot;Month&quot;&#39;, &#39;&quot;Average&quot;&#39;, &#39;&quot;2005&quot;&#39;, &#39;&quot;2006&quot;&#39;, &#39;&quot;2007&quot;&#39;, &#39;&quot;2008&quot;&#39;, &#39;&quot;2009&quot;&#39;, &#39;&quot;2010&quot;&#39;, &#39;&quot;2011&quot;&#39;, &#39;&quot;2012&quot;&#39;, &#39;&quot;2013&quot;&#39;, &#39;&quot;2014&quot;&#39;, &#39;&quot;2015&quot;&#39;]
+[&#39;&quot;May&quot;&#39;, &#39;0.1&#39;, &#39;0&#39;, &#39;0&#39;, &#39;1&#39;, &#39;1&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;2&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;]
+[&#39;&quot;Jun&quot;&#39;, &#39;0.5&#39;, &#39;2&#39;, &#39;1&#39;, &#39;1&#39;, &#39;0&#39;, &#39;0&#39;, &#39;1&#39;, &#39;1&#39;, &#39;2&#39;, &#39;2&#39;, &#39;0&#39;, &#39;1&#39;]
+[&#39;&quot;Jul&quot;&#39;, &#39;0.7&#39;, &#39;5&#39;, &#39;1&#39;, &#39;1&#39;, &#39;2&#39;, &#39;0&#39;, &#39;1&#39;, &#39;3&#39;, &#39;0&#39;, &#39;2&#39;, &#39;2&#39;, &#39;1&#39;]
+[&#39;&quot;Aug&quot;&#39;, &#39;2.3&#39;, &#39;6&#39;, &#39;3&#39;, &#39;2&#39;, &#39;4&#39;, &#39;4&#39;, &#39;4&#39;, &#39;7&#39;, &#39;8&#39;, &#39;2&#39;, &#39;2&#39;, &#39;3&#39;]
+[&#39;&quot;Sep&quot;&#39;, &#39;3.5&#39;, &#39;6&#39;, &#39;4&#39;, &#39;7&#39;, &#39;4&#39;, &#39;2&#39;, &#39;8&#39;, &#39;5&#39;, &#39;2&#39;, &#39;5&#39;, &#39;2&#39;, &#39;5&#39;]
+[&#39;&quot;Oct&quot;&#39;, &#39;2.0&#39;, &#39;8&#39;, &#39;0&#39;, &#39;1&#39;, &#39;3&#39;, &#39;2&#39;, &#39;5&#39;, &#39;1&#39;, &#39;5&#39;, &#39;2&#39;, &#39;3&#39;, &#39;0&#39;]
+[&#39;&quot;Nov&quot;&#39;, &#39;0.5&#39;, &#39;3&#39;, &#39;0&#39;, &#39;0&#39;, &#39;1&#39;, &#39;1&#39;, &#39;0&#39;, &#39;1&#39;, &#39;0&#39;, &#39;1&#39;, &#39;0&#39;, &#39;1&#39;]
+[&#39;&quot;Dec&quot;&#39;, &#39;0.0&#39;, &#39;1&#39;, &#39;0&#39;, &#39;1&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;0&#39;, &#39;1&#39;]</code></pre></div>
+<div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-comment"># 将二维数据写入CSV格式文件</span>
+file = <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;sample1.csv&quot;</span>, <span class="hljs-string">&quot;w&quot;</span>)
+<span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> ls:
+    file.write(<span class="hljs-string">&quot;,&quot;</span>.join(item) + <span class="hljs-string">&quot;\n&quot;</span>)
+file.close()</code></pre></div>
+<blockquote>
+<p>代码中用到的文件：</p>
+<p>链接：<a
+target="_blank" rel="noopener" href="https://pan.baidu.com/s/1yQ5a3NQS8LxYagRyQSvs1A?pwd=c31g">https://pan.baidu.com/s/1yQ5a3NQS8LxYagRyQSvs1A?pwd=c31g</a>
+提取码：c31g</p>
+</blockquote>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Python%E5%9F%BA%E7%A1%80/" class="category-chain-item">Python基础</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Python/">#Python</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Python基础（七）：文件与数据格式化</div>
+      <div>https://luminous-ee.github.io/2023/01/26/Python基础（七）：文件与数据格式化/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>落与</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年1月26日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/01/27/Python-%E4%B8%8E-Packages%EF%BC%88%E4%BA%94%EF%BC%89%EF%BC%9Ajieba-wordcloud/" title="Python 与 Packages（五）：jieba + wordcloud">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Python 与 Packages（五）：jieba + wordcloud</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/01/26/Python%E5%9F%BA%E7%A1%80%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9A%E7%BB%84%E5%90%88%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8BII/" title="Python基础（六）：组合数据类型II">
+                        <span class="hidden-mobile">Python基础（六）：组合数据类型II</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  <article id="comments" lazyload>
+    
+  <div id="SOHUCS" sid='https://luminous-ee.github.io/2023/01/26/Python%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%83%EF%BC%89%EF%BC%9A%E6%96%87%E4%BB%B6%E4%B8%8E%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F%E5%8C%96/'></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#SOHUCS', function() {
+      Fluid.utils.createScript("https://changyan.sohu.com/upload/changyan.js", function() {
+        window.changyan.api.config({"appid":"cywqfeju4","appkey":"e219dc237711a7dc2f9d8fbc65f15679"})
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+  </article>
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

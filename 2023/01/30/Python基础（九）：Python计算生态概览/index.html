@@ -16,26 +16,24 @@
   <meta name="author" content="落与">
   <meta name="keywords" content="computer">
   
-    <meta name="description" content="基本绘图体系——turtle  turtle库介绍  窗体   turtle.setup(width,height,startx,starty)  坐标  绝对坐标   turtle.goto(x,y)  海龟坐标  角度坐标(绝对角度)   turtle.seth(angle)   色彩  turtle库函数  画笔控制  penup(">
+    <meta name="description" content="Python 计算生态概览 9.1 从数据处理到人工智能 9.1.1 数据分析  numpy：表达 n 维数组的最基础库  将 n 维数组看成简单的数据对象进行直接的操作和运算，这是 numpy 最大的价值。   Python 接口使用，C 语言实现，计算速度优异 Python 数据分析和科学计算的基础库 提供直接的矩阵运算、广播函数、线性代数等功能  pandas">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python 与 Packages（一）：turtle库">
-<meta property="og:url" content="https://luminous-ee.github.io/2023/01/20/Python-%E4%B8%8E-Packages%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9Aturtle%E5%BA%93/index.html">
+<meta property="og:title" content="Python基础（九）：Python计算生态概览">
+<meta property="og:url" content="https://luminous-ee.github.io/2023/01/30/Python%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B9%9D%EF%BC%89%EF%BC%9APython%E8%AE%A1%E7%AE%97%E7%94%9F%E6%80%81%E6%A6%82%E8%A7%88/index.html">
 <meta property="og:site_name" content="Luminous">
-<meta property="og:description" content="基本绘图体系——turtle  turtle库介绍  窗体   turtle.setup(width,height,startx,starty)  坐标  绝对坐标   turtle.goto(x,y)  海龟坐标  角度坐标(绝对角度)   turtle.seth(angle)   色彩  turtle库函数  画笔控制  penup(">
+<meta property="og:description" content="Python 计算生态概览 9.1 从数据处理到人工智能 9.1.1 数据分析  numpy：表达 n 维数组的最基础库  将 n 维数组看成简单的数据对象进行直接的操作和运算，这是 numpy 最大的价值。   Python 接口使用，C 语言实现，计算速度优异 Python 数据分析和科学计算的基础库 提供直接的矩阵运算、广播函数、线性代数等功能  pandas">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://docs.python.org/3.9/_images/turtle-star.png">
-<meta property="article:published_time" content="2023-01-20T14:12:49.000Z">
-<meta property="article:modified_time" content="2023-01-26T08:32:29.520Z">
+<meta property="article:published_time" content="2023-01-30T06:33:35.000Z">
+<meta property="article:modified_time" content="2023-01-26T09:08:16.195Z">
 <meta property="article:author" content="落与">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://docs.python.org/3.9/_images/turtle-star.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Python 与 Packages（一）：turtle库 - Luminous</title>
+  <title>Python基础（九）：Python计算生态概览 - Luminous</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -234,7 +232,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Python 与 Packages（一）：turtle库"></span>
+            <span id="subtitle" data-typed-text="Python基础（九）：Python计算生态概览"></span>
           
         </div>
 
@@ -245,8 +243,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-01-20 22:12" pubdate>
-          2023年1月20日 晚上
+        <time datetime="2023-01-30 14:33" pubdate>
+          2023年1月30日 下午
         </time>
       </span>
     
@@ -257,7 +255,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.3k 字
+          3k 字
         
       </span>
     
@@ -268,7 +266,7 @@
         
         
         
-          12 分钟
+          25 分钟
         
       </span>
     
@@ -306,165 +304,378 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Python 与 Packages（一）：turtle库</h1>
+            <h1 style="display: none">Python基础（九）：Python计算生态概览</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="基本绘图体系turtle">基本绘图体系——turtle</h1>
-<p><img src="https://docs.python.org/3.9/_images/turtle-star.png" srcset="/img/loading.gif" lazyload /></p>
-<h2 id="turtle库介绍">turtle库介绍</h2>
-<ol type="1">
-<li><p>窗体</p>
-<p><img
-src="https://cdn.jsdelivr.net/gh/Luminous-ee/ImgBed/photos/202301202242318.jpg" srcset="/img/loading.gif" lazyload /></p>
-<blockquote>
-<p><code>turtle.setup(width,height,startx,starty)</code></p>
-</blockquote></li>
-<li><p>坐标</p>
+                <h1 id="python-计算生态概览">Python 计算生态概览</h1>
+<h2 id="从数据处理到人工智能">9.1 从数据处理到人工智能</h2>
+<h3 id="数据分析">9.1.1 数据分析</h3>
 <ul>
-<li><p>绝对坐标</p>
-<p><img
-src="https://cdn.jsdelivr.net/gh/Luminous-ee/ImgBed/photos/202301202242075.jpg" srcset="/img/loading.gif" lazyload /></p>
+<li><p>numpy：表达 n 维数组的最基础库</p>
 <blockquote>
-<p><code>turtle.goto(x,y)</code></p>
-</blockquote></li>
-<li><p>海龟坐标</p>
-<p><img
-src="https://cdn.jsdelivr.net/gh/Luminous-ee/ImgBed/photos/202301202243067.jpg" srcset="/img/loading.gif" lazyload /></p></li>
-<li><p>角度坐标(绝对角度)</p>
-<p><img
-src="https://cdn.jsdelivr.net/gh/Luminous-ee/ImgBed/photos/202301202243987.jpg" srcset="/img/loading.gif" lazyload /></p>
-<blockquote>
-<p><code>turtle.seth(angle)</code></p>
-</blockquote></li>
-</ul></li>
-<li><p>色彩</p></li>
-</ol>
-<h2 id="turtle库函数">turtle库函数</h2>
-<ol type="1">
-<li><p>画笔控制</p>
-<ul>
-<li><p><code>penup() | pu()</code> 抬笔</p></li>
-<li><p><code>pendown() | pd()</code> 落笔</p></li>
-<li><p><code>pensize() | width()</code> 粗细</p></li>
-<li><p><code>pencolor()</code> 颜色</p>
-<blockquote>
-<p>pencolor()的3种形式</p>
-<blockquote>
-<p>pencolor("purple")</p>
-<p>pencolor(r,g,b)</p>
-<p>pencolor((r,g,b))</p>
+<p>将 n 维数组看成简单的数据对象进行直接的操作和运算，这是 numpy
+最大的价值。</p>
 </blockquote>
-</blockquote></li>
-</ul></li>
-<li><p>运动控制</p>
 <ul>
-<li><p><code>forward() | fd()</code></p>
-<blockquote>
-<p>海龟前进 distance 指定的距离，方向为海龟的朝向。</p>
-</blockquote></li>
-<li><p><code>backward() | back() | bk()</code></p>
-<blockquote>
-<p>海龟后退 distance 指定的距离，方向与海龟的朝向相反。</p>
-</blockquote></li>
-<li><p><code>circle()</code></p>
-<blockquote>
-<p><code>circle(radius, extent)</code> 绘制一个 radius
-指定半径的圆。</p>
-<p>圆心在海龟左边 radius 个单位；extent
-为一个夹角，用来决定绘制圆的一部分。</p>
-</blockquote></li>
-<li><p><code>goto() | setpos() | setposition()</code></p>
-<blockquote>
-<p>海龟移动到一个绝对坐标
-(x,y)。如果画笔落下将会画线。不改变海龟的朝向。</p>
-</blockquote></li>
-<li><p><code>home()</code></p>
-<blockquote>
-<p>海龟移至初始坐标 (0,0)，并设置朝向为初始方向。</p>
-</blockquote></li>
-<li><p><code>speed()</code></p>
-<blockquote>
-<p>设置海龟移动的速度为 0..10 表示的整型数值。</p>
-<p>速度值从 1 到 10，画线和海龟转向的动画效果逐级加快。speed = 0
-表示没有 动画效果。</p>
-</blockquote></li>
+<li>Python 接口使用，C 语言实现，计算速度优异</li>
+<li>Python 数据分析和科学计算的基础库</li>
+<li>提供直接的矩阵运算、广播函数、线性代数等功能</li>
 </ul></li>
-<li><p>方向控制</p>
+<li><p>pandas</p>
 <ul>
-<li><p><code>setheading() | seth()</code></p>
+<li><p>提供了简单易用的数据结构和数据分析工具</p></li>
+<li><p>由两种数据结构组成：<code>Series</code> 和
+<code>DataFrame</code></p>
 <blockquote>
-<p>设置海龟的朝向为 angle。angle 为绝对角度。</p>
+<p><code>Series</code>
+是由数字构成的列表，其中每个元素都有数据和索引</p>
+<p><code>DataFrame</code>
+类似电子表格，同时具有行和列索引，可以将其看作是由 <code>Series</code>
+构成的字典</p>
 </blockquote></li>
-<li><p><code>right() | rt()</code></p>
-<blockquote>
-<p>海龟右转 angle 个单位。(单位默认为角度)</p>
-</blockquote></li>
-<li><p><code>left() | lt()</code></p>
-<blockquote>
-<p>海龟左转 angle 个单位。</p>
-</blockquote></li>
+<li><p>Python 最主要的数据分析功能库，基于 numpy 开发</p></li>
 </ul></li>
-</ol>
+<li><p>scipy</p>
+<ul>
+<li>提供了一批数学算法及工程数据运算功能</li>
+<li>Python 最主要的科学计算功能库，基于 numpy 开发</li>
+</ul></li>
+</ul>
+<h3 id="数据可视化">9.1.2 数据可视化</h3>
+<ul>
+<li><p>matplotlib：高质量的二维数据可视化功能库</p>
+<ul>
+<li>提供了超过 100 种数据可视化展示效果</li>
+<li>通过 matplotlib.pyplot 子库调用可视化效果</li>
+<li>Python 最主要的数据可视化功能库，基于 numpy 开发</li>
+</ul></li>
+<li><p>seaborn：统计类数据可视化功能库</p>
+<ul>
+<li>提供了一批高层次的统计类数据可视化展示效果</li>
+<li>基于 matplotlib 开发，支持 numpy 和 pandas</li>
+</ul></li>
+<li><p>mayavi：三维科学数据可视化功能库</p></li>
+</ul>
+<h3 id="文本处理">9.1.3 文本处理</h3>
+<ul>
+<li><p>pypdf2：用来处理 pdf 文件的工具集</p></li>
+<li><p>NLTK：自然语言文本处理第三方库</p>
+<ul>
+<li>提供了一批简单易用的自然语言文本处理功能</li>
+<li>最优秀的 Python 自然语言处理库</li>
+</ul></li>
+<li><p>Python-docx：创建或更新 Word 文件的第三方库</p></li>
+</ul>
+<h3 id="机器学习">9.1.4 机器学习</h3>
+<ul>
+<li><p>scikit-learn：机器学习方法工具集</p>
+<ul>
+<li>提供一批统一化的机器学习方法功能接口</li>
+<li>提供分类、回归、聚类、强化学习等计算功能</li>
+<li>基于 NumPy、SciPy 和 matplotlib 构建</li>
+</ul></li>
+<li><p>TensorFlow：机器学习计算框架</p></li>
+<li><p>MxNet：基于神经网络的深度学习计算框架</p></li>
+</ul>
+<h2 id="从web解析到网络空间">9.2 从web解析到网络空间</h2>
+<h3 id="网络爬虫">9.2.1 网络爬虫</h3>
+<ul>
+<li><p>requests：网络爬虫功能库</p></li>
+<li><p>scrapy：网络爬虫框架</p></li>
+<li><p>pyspider：web 页面爬取系统</p></li>
+</ul>
+<h3 id="web信息提取">9.2.2 web信息提取</h3>
+<ul>
+<li><p>beautifulsoup4：HTML 和 XML 的解析库</p></li>
+<li><p>re：正则表达式解析和处理功能库</p>
 <blockquote>
-<p>思维导图</p>
+<p>Python最主要的标准库之一，无需安装</p>
+</blockquote></li>
+<li><p>Python-Goose：提取文章类型 web 页面的功能库</p></li>
+</ul>
+<h3 id="web网站开发">9.2.3 web网站开发</h3>
+<ul>
+<li><p>Django：复杂的 web 应用框架</p></li>
+<li><p>Pyramid：中规模的 web 应用框架</p></li>
+<li><p>Flask：web 应用开发微框架</p>
+<blockquote>
+<p>提供了最简单的构建 web 系统的应用框架</p>
+</blockquote></li>
+</ul>
+<h3 id="网络应用开发">9.2.4 网络应用开发</h3>
+<ul>
+<li><p>WeRoBot：微信公众号开发框架</p></li>
+<li><p>aip：百度 AI 开放平台接口</p></li>
+<li><p>MyQR：二维码生成第三方库</p></li>
+</ul>
+<h2 id="从人机交互到艺术设计">9.3 从人机交互到艺术设计</h2>
+<h3 id="图形用户界面">9.3.1 图形用户界面</h3>
+<ul>
+<li><p>PyQt5：Qt 开发框架的 Python 接口</p></li>
+<li><p>wxPython：专用于 Python 的跨平台 GUI 开发框架</p></li>
+<li><p>PyGObject：使用 GTK+ 开发 GUI 的功能库</p>
+<blockquote>
+<p>GTK+ 是一套跨多种平台的图形工具包</p>
+</blockquote></li>
+</ul>
+<h3 id="游戏开发">9.3.2 游戏开发</h3>
+<ul>
+<li><p>PyGame：简单的游戏开发功能库</p></li>
+<li><p>Panda3D：开源跨平台的 3D 渲染和游戏开发库</p></li>
+<li><p>cocos2d：构建2d游戏和图形界面交互式应用的框架</p></li>
+</ul>
+<h3 id="虚拟现实">9.3.3 虚拟现实</h3>
+<ul>
+<li><p>VR Zero：在树莓派上开发 VR 应用的 Python 库</p></li>
+<li><p>pyovr：针对 Oculus 公司 VR 设备的库</p></li>
+<li><p>Vizard：基于 Python 的通用 VR 开发引擎</p></li>
+</ul>
+<h3 id="图形艺术">9.3.4 图形艺术</h3>
+<ul>
+<li><p>Quads：展示迭代艺术的第三方库</p></li>
+<li><p>ascii_art：采用 ASCII 码展示图形艺术的第三方库</p></li>
+<li><p>turtle：海龟绘图体系</p></li>
+</ul>
+<h2 id="导图">导图</h2>
 <p><img
-src="https://cdn.jsdelivr.net/gh/Luminous-ee/ImgBed/photos/202301202244216.png" srcset="/img/loading.gif" lazyload /></p>
-</blockquote>
+src="https://cdn.jsdelivr.net/gh/Luminous-ee/ImgBed/photos/202301261637754.png" srcset="/img/loading.gif" lazyload /></p>
 <h1 id="tips">Tips</h1>
+<h2 id="numpy"><a target="_blank" rel="noopener" href="https://numpy.org/">NumPy</a></h2>
 <ol type="1">
-<li><p>turtle 库</p>
-<p>turtle 库是 Python 的标准库之一，属于入门级的图形绘制函数库；</p>
-<blockquote>
-<p>Python 计算生态 = 标准库 + 第三方库</p>
-<blockquote>
-<p>标准库：随 Pyhton 解释器直接安装的功能模块。</p>
-<p>第三方库：需要经过安装才能使用的功能模块。</p>
-</blockquote>
-</blockquote>
-<p>帮助文档：<a
-target="_blank" rel="noopener" href="https://docs.python.org/3.9/library/turtle.html">turtle - Turtle
-graphics</a></p></li>
-<li><p>导入库的方法</p>
+<li><p>介绍</p>
+<p>NumPy 是 Python
+科学计算的基本库，提供了多维数组对象、各种派生对象（如矩阵）和一系列用于对数组进行快速操作的例程，包括数学、逻辑、形状操作、排序、选择、I/O、离散傅里叶变换、基本线性代数、基本统计操作、随机模拟等等。</p></li>
+<li><p>NumPy 库的核心是 ndarray 对象。NumPy 数组和标准 Python
+序列之间有几个重要的区别：</p>
 <ul>
-<li><code>import turtle</code> 或 <code>from turtle import *</code>
-<ul>
-<li>相同：都是引入 turtle 库中的所有方法</li>
-<li>不同：第一种方式下需使用
-<code>turtle.fd()</code>，第二种方式直接使用 <code>fd()</code>
-即可。</li>
+<li>NumPy 数组在创建时具有固定的大小，与 Python
+列表（可以动态增长）不同。更改 ndarray
+的大小将创建一个新数组并删除原始数组。</li>
+<li>NumPy
+数组中的元素都具有相同的数据类型，因此在内存中的大小相同。</li>
+<li>NumPy 数组有助于对大量数据进行高级数学和其他类型的操作。与使用
+Python 的内置序列相比，此类操作的执行效率更高，代码更少。</li>
 </ul></li>
-<li><code>import turtle as t</code></li>
-</ul></li>
-<li><p>循环语句与 range() 函数</p>
-<ul>
-<li><p><code>for</code> 循环</p>
-<p><div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-comment">#一般格式</span>
-<span class="hljs-keyword">for</span> &lt;variable&gt; <span class="hljs-keyword">in</span> &lt;sequence&gt;:
-&lt;statements&gt;
+<li><p>创建数组</p>
+<blockquote>
+<p><code>import numpy as np</code></p>
+</blockquote>
+<table>
 
-<span class="hljs-comment">#实例</span>
-&gt;&gt;&gt;languages = [<span class="hljs-string">&quot;C&quot;</span>, <span class="hljs-string">&quot;C++&quot;</span>, <span class="hljs-string">&quot;Python&quot;</span>] 
-<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> languages:
-<span class="hljs-meta">... </span>    <span class="hljs-built_in">print</span> (x)
-<span class="hljs-meta">... </span>
-C
-C++
-Python</code></pre></div></p></li>
-<li><p><code>range()</code> 函数：产生循环计数序列</p>
+<thead>
+<tr class="header">
+<th style="text-align: center;">函数</th>
+<th style="text-align: center;">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><code>np.array()</code></td>
+<td style="text-align: center;">创建一个数组。参数传递一个
+<strong>python 序列</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>np.zeros()</code></td>
+<td
+style="text-align: center;">返回一个<strong>给定形状和类型</strong>的新数组，用
+<code>0</code> 填充。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>np.ones()</code></td>
+<td
+style="text-align: center;">返回一个<strong>给定形状和类型</strong>的新数组，用
+<code>1</code> 填充。</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>np.empty()</code></td>
+<td
+style="text-align: center;">返回<strong>给定形状和类型</strong>的新数组，初始内容是随机的，取决于内存的状态。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>np.arange()</code></td>
+<td
+style="text-align: center;">返回<strong>给定间隔内均匀分布</strong>的数组，指定<strong>范围和步长</strong>。</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>np.linspace()</code></td>
+<td
+style="text-align: center;">返回<strong>指定间隔内均匀分布</strong>的数组，指定<strong>范围和个数</strong>。</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>数组属性</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">属性</th>
+<th style="text-align: center;">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><code>ndarray.shape</code></td>
+<td
+style="text-align: center;">数组维度的元组。通常用于获取数组的当前形状。</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>ndarray.ndim</code></td>
+<td
+style="text-align: center;">数组维度的数量，即轴的数量，称为秩。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>ndarray.size</code></td>
+<td style="text-align: center;">数组中的元素数。</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>ndarray.itemsize</code></td>
+<td
+style="text-align: center;">一个数组元素的长度（以字节为单位）。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>ndarray.dtype</code></td>
+<td style="text-align: center;">数组元素的数据类型。</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>索引和切片：像对 Python 列表进行切片一样对 NumPy
+数组进行索引和切片。</p>
+<blockquote>
+<p>如果要从数组中选择满足特定条件的值， NumPy
+很简单。<code>print(a[(a &gt; 2) &amp; (a &lt; 11)])</code></p>
+</blockquote></li>
+<li><p>从现有数据创建数组：</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">函数</th>
+<th style="text-align: center;">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><code>np.vstack((a1, a2))</code></td>
+<td
+style="text-align: center;"><strong>垂直堆叠</strong>两个现有阵列</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>np.hstack((a1, a2))</code></td>
+<td
+style="text-align: center;"><strong>水平堆叠</strong>两个现有阵列</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>np.hsplit(x, 3)</code></td>
+<td style="text-align: center;">将数组 x 拆分为三个形状相等的数组</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>b = a</code></td>
+<td
+style="text-align: center;"><strong>简单赋值</strong>不会复制对象或其数据。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>c = a.view()</code></td>
+<td
+style="text-align: center;"><strong>浅拷贝</strong>，创建一个查看相同数据的新数组对象</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>d = a.copy()</code></td>
+<td
+style="text-align: center;"><strong>深拷贝</strong>，创建数组及其数据的完整副本。</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>数组操作</p>
 <ul>
-<li><code>range(n)</code>，产生 0 到 n-1
-的整数序列，<code>for i in range(5):</code></li>
-<li><code>range(m,n)</code>，产生 m 到 n-1
-的整数序列，<code>for i in range(5,9) :</code></li>
-<li><code>range(m,n,q)</code>，产生 m 到 n-1 的整数序列，步长为
-q，<code>for i in range(0,11,2) :</code></li>
+<li><p>基本操作：加<code>+</code>、减<code>-</code>、乘<code>*</code>、除<code>/</code>、求和
+<code>ndarray.sum()</code></p>
+<blockquote>
+<p>广播：NumPy 明白基本操作应该发生在每个元素上。</p>
+</blockquote></li>
+<li><p>更有用的操作：<code>ndarray.max()</code>、<code>ndarray.min()</code></p></li>
 </ul></li>
-</ul></li>
+<li><p>其他操作：</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">函数</th>
+<th style="text-align: center;">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><code>np.flip()</code></td>
+<td style="text-align: center;">反转数组</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>ndarray.flatten()</code></td>
+<td style="text-align: center;">将阵列展平为一维数组</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>使用 Matplotlib 绘制数组</p></li>
 </ol>
-<p><img
-src="https://cdn.jsdelivr.net/gh/Luminous-ee/ImgBed/photos/202301202312733.jpg" srcset="/img/loading.gif" lazyload /></p>
+<h2 id="matplotlib"><a
+target="_blank" rel="noopener" href="https://matplotlib.org/">Matplotlib</a></h2>
+<p><code>matplotlib.pyplot</code></p>
+<ol type="1">
+<li><p>介绍：</p>
+<p><code>matplotlib.pyplot</code> 是一个函数集合，使得
+<strong>matplotlib</strong> 像 MATLAB
+一样工作。每个函数对图形进行一些更改：
+例如，创建一个图形，在图形中创建绘图区域，在绘图区域中绘制一些线条，用标签等装饰绘图。</p>
+<blockquote>
+<p><code>import matplotlib.pyplot as plt</code></p>
+</blockquote></li>
+<li><p>一些绘图命令</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">函数</th>
+<th style="text-align: center;">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><code>plt.figure()</code></td>
+<td style="text-align: center;">创建新图形</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>plt.grid()</code></td>
+<td style="text-align: center;">配置网格线</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>plt.plot()</code></td>
+<td style="text-align: center;">将 x 与 y 绘制为线条或标记</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>plt.subplot()</code></td>
+<td style="text-align: center;">将子图添加到当前图形</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>plt.show()</code></td>
+<td style="text-align: center;">展示所有打开的图形</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>plt.text()</code></td>
+<td style="text-align: center;">将文本 s 添加到坐标 (x，y) 处的轴</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>plt.title()</code></td>
+<td style="text-align: center;">设置轴的标题</td>
+</tr>
+<tr class="even">
+<td
+style="text-align: center;"><code>plt.xlabel()/plt.ylabel()</code></td>
+<td style="text-align: center;">设置 x / y 轴的标签</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>plt.xlim()/plt.ylim()</code></td>
+<td style="text-align: center;">获取或设置当前轴 x / y 的范围</td>
+</tr>
+</tbody>
+</table></li>
+</ol>
 
                 
               </div>
@@ -483,7 +694,7 @@ src="https://cdn.jsdelivr.net/gh/Luminous-ee/ImgBed/photos/202301202312733.jpg" 
     
       <span class="category-chain">
         
-  <a href="/categories/Python%E5%BA%93/" class="category-chain-item">Python库</a>
+  <a href="/categories/Python%E5%9F%BA%E7%A1%80/" class="category-chain-item">Python基础</a>
   
   
 
@@ -510,8 +721,8 @@ src="https://cdn.jsdelivr.net/gh/Luminous-ee/ImgBed/photos/202301202312733.jpg" 
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Python 与 Packages（一）：turtle库</div>
-      <div>https://luminous-ee.github.io/2023/01/20/Python-与-Packages（一）：turtle库/</div>
+      <div>Python基础（九）：Python计算生态概览</div>
+      <div>https://luminous-ee.github.io/2023/01/30/Python基础（九）：Python计算生态概览/</div>
     </div>
     <div class="license-meta">
       
@@ -523,7 +734,7 @@ src="https://cdn.jsdelivr.net/gh/Luminous-ee/ImgBed/photos/202301202312733.jpg" 
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年1月20日</div>
+          <div>2023年1月30日</div>
         </div>
       
       
@@ -555,18 +766,12 @@ src="https://cdn.jsdelivr.net/gh/Luminous-ee/ImgBed/photos/202301202312733.jpg" 
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/01/22/Python%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%9A%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" title="Python基础（二）：基本数据类型">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Python基础（二）：基本数据类型</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/01/19/Python%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E5%85%83%E7%B4%A0/" title="Python基础（一）：基本语法元素">
-                        <span class="hidden-mobile">Python基础（一）：基本语法元素</span>
+                      <a href="/2023/01/29/Python-%E4%B8%8E-Packages%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9Aos%E5%BA%93/" title="Python 与 Packages（六）：os库">
+                        <span class="hidden-mobile">Python 与 Packages（六）：os库</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -579,7 +784,7 @@ src="https://cdn.jsdelivr.net/gh/Luminous-ee/ImgBed/photos/202301202312733.jpg" 
             
   <article id="comments" lazyload>
     
-  <div id="SOHUCS" sid='https://luminous-ee.github.io/2023/01/20/Python-%E4%B8%8E-Packages%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9Aturtle%E5%BA%93/'></div>
+  <div id="SOHUCS" sid='https://luminous-ee.github.io/2023/01/30/Python%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B9%9D%EF%BC%89%EF%BC%9APython%E8%AE%A1%E7%AE%97%E7%94%9F%E6%80%81%E6%A6%82%E8%A7%88/'></div>
   <script type="text/javascript">
     Fluid.utils.loadComments('#SOHUCS', function() {
       Fluid.utils.createScript("https://changyan.sohu.com/upload/changyan.js", function() {

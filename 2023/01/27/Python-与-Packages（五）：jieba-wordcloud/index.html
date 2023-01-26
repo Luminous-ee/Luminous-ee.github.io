@@ -16,26 +16,24 @@
   <meta name="author" content="落与">
   <meta name="keywords" content="computer">
   
-    <meta name="description" content="基本绘图体系——turtle  turtle库介绍  窗体   turtle.setup(width,height,startx,starty)  坐标  绝对坐标   turtle.goto(x,y)  海龟坐标  角度坐标(绝对角度)   turtle.seth(angle)   色彩  turtle库函数  画笔控制  penup(">
+    <meta name="description" content="jieba 库：中文分词第三方库  jieba 是优秀的中文分词第三方库 安装：pip install jieba   jieba库常用函数     函数 作用     jieba.lcut(s) 精确模式，返回一个列表类型的分词结果   jieba.lcut(s,cut_all&#x3D;True) 全模式，返回一个列表类型的分词结果，存在冗余   ji">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python 与 Packages（一）：turtle库">
-<meta property="og:url" content="https://luminous-ee.github.io/2023/01/20/Python-%E4%B8%8E-Packages%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9Aturtle%E5%BA%93/index.html">
+<meta property="og:title" content="Python 与 Packages（五）：jieba + wordcloud">
+<meta property="og:url" content="https://luminous-ee.github.io/2023/01/27/Python-%E4%B8%8E-Packages%EF%BC%88%E4%BA%94%EF%BC%89%EF%BC%9Ajieba-wordcloud/index.html">
 <meta property="og:site_name" content="Luminous">
-<meta property="og:description" content="基本绘图体系——turtle  turtle库介绍  窗体   turtle.setup(width,height,startx,starty)  坐标  绝对坐标   turtle.goto(x,y)  海龟坐标  角度坐标(绝对角度)   turtle.seth(angle)   色彩  turtle库函数  画笔控制  penup(">
+<meta property="og:description" content="jieba 库：中文分词第三方库  jieba 是优秀的中文分词第三方库 安装：pip install jieba   jieba库常用函数     函数 作用     jieba.lcut(s) 精确模式，返回一个列表类型的分词结果   jieba.lcut(s,cut_all&#x3D;True) 全模式，返回一个列表类型的分词结果，存在冗余   ji">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://docs.python.org/3.9/_images/turtle-star.png">
-<meta property="article:published_time" content="2023-01-20T14:12:49.000Z">
-<meta property="article:modified_time" content="2023-01-26T08:32:29.520Z">
+<meta property="article:published_time" content="2023-01-27T01:03:10.000Z">
+<meta property="article:modified_time" content="2023-01-26T07:49:35.084Z">
 <meta property="article:author" content="落与">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://docs.python.org/3.9/_images/turtle-star.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Python 与 Packages（一）：turtle库 - Luminous</title>
+  <title>Python 与 Packages（五）：jieba + wordcloud - Luminous</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -234,7 +232,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Python 与 Packages（一）：turtle库"></span>
+            <span id="subtitle" data-typed-text="Python 与 Packages（五）：jieba + wordcloud"></span>
           
         </div>
 
@@ -245,8 +243,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-01-20 22:12" pubdate>
-          2023年1月20日 晚上
+        <time datetime="2023-01-27 09:03" pubdate>
+          2023年1月27日 上午
         </time>
       </span>
     
@@ -257,7 +255,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.3k 字
+          1.8k 字
         
       </span>
     
@@ -268,7 +266,7 @@
         
         
         
-          12 分钟
+          15 分钟
         
       </span>
     
@@ -306,165 +304,208 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Python 与 Packages（一）：turtle库</h1>
+            <h1 style="display: none">Python 与 Packages（五）：jieba + wordcloud</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="基本绘图体系turtle">基本绘图体系——turtle</h1>
-<p><img src="https://docs.python.org/3.9/_images/turtle-star.png" srcset="/img/loading.gif" lazyload /></p>
-<h2 id="turtle库介绍">turtle库介绍</h2>
-<ol type="1">
-<li><p>窗体</p>
-<p><img
-src="https://cdn.jsdelivr.net/gh/Luminous-ee/ImgBed/photos/202301202242318.jpg" srcset="/img/loading.gif" lazyload /></p>
+                <h1 id="jieba-库中文分词第三方库"><strong>jieba</strong>
+库：中文分词第三方库</h1>
 <blockquote>
-<p><code>turtle.setup(width,height,startx,starty)</code></p>
-</blockquote></li>
-<li><p>坐标</p>
-<ul>
-<li><p>绝对坐标</p>
-<p><img
-src="https://cdn.jsdelivr.net/gh/Luminous-ee/ImgBed/photos/202301202242075.jpg" srcset="/img/loading.gif" lazyload /></p>
-<blockquote>
-<p><code>turtle.goto(x,y)</code></p>
-</blockquote></li>
-<li><p>海龟坐标</p>
-<p><img
-src="https://cdn.jsdelivr.net/gh/Luminous-ee/ImgBed/photos/202301202243067.jpg" srcset="/img/loading.gif" lazyload /></p></li>
-<li><p>角度坐标(绝对角度)</p>
-<p><img
-src="https://cdn.jsdelivr.net/gh/Luminous-ee/ImgBed/photos/202301202243987.jpg" srcset="/img/loading.gif" lazyload /></p>
-<blockquote>
-<p><code>turtle.seth(angle)</code></p>
-</blockquote></li>
-</ul></li>
-<li><p>色彩</p></li>
-</ol>
-<h2 id="turtle库函数">turtle库函数</h2>
-<ol type="1">
-<li><p>画笔控制</p>
-<ul>
-<li><p><code>penup() | pu()</code> 抬笔</p></li>
-<li><p><code>pendown() | pd()</code> 落笔</p></li>
-<li><p><code>pensize() | width()</code> 粗细</p></li>
-<li><p><code>pencolor()</code> 颜色</p>
-<blockquote>
-<p>pencolor()的3种形式</p>
-<blockquote>
-<p>pencolor("purple")</p>
-<p>pencolor(r,g,b)</p>
-<p>pencolor((r,g,b))</p>
+<p>jieba 是优秀的中文分词第三方库</p>
+<p>安装：<code>pip install jieba</code></p>
 </blockquote>
-</blockquote></li>
-</ul></li>
-<li><p>运动控制</p>
 <ul>
-<li><p><code>forward() | fd()</code></p>
-<blockquote>
-<p>海龟前进 distance 指定的距离，方向为海龟的朝向。</p>
-</blockquote></li>
-<li><p><code>backward() | back() | bk()</code></p>
-<blockquote>
-<p>海龟后退 distance 指定的距离，方向与海龟的朝向相反。</p>
-</blockquote></li>
-<li><p><code>circle()</code></p>
-<blockquote>
-<p><code>circle(radius, extent)</code> 绘制一个 radius
-指定半径的圆。</p>
-<p>圆心在海龟左边 radius 个单位；extent
-为一个夹角，用来决定绘制圆的一部分。</p>
-</blockquote></li>
-<li><p><code>goto() | setpos() | setposition()</code></p>
-<blockquote>
-<p>海龟移动到一个绝对坐标
-(x,y)。如果画笔落下将会画线。不改变海龟的朝向。</p>
-</blockquote></li>
-<li><p><code>home()</code></p>
-<blockquote>
-<p>海龟移至初始坐标 (0,0)，并设置朝向为初始方向。</p>
-</blockquote></li>
-<li><p><code>speed()</code></p>
-<blockquote>
-<p>设置海龟移动的速度为 0..10 表示的整型数值。</p>
-<p>速度值从 1 到 10，画线和海龟转向的动画效果逐级加快。speed = 0
-表示没有 动画效果。</p>
-</blockquote></li>
-</ul></li>
-<li><p>方向控制</p>
-<ul>
-<li><p><code>setheading() | seth()</code></p>
-<blockquote>
-<p>设置海龟的朝向为 angle。angle 为绝对角度。</p>
-</blockquote></li>
-<li><p><code>right() | rt()</code></p>
-<blockquote>
-<p>海龟右转 angle 个单位。(单位默认为角度)</p>
-</blockquote></li>
-<li><p><code>left() | lt()</code></p>
-<blockquote>
-<p>海龟左转 angle 个单位。</p>
-</blockquote></li>
-</ul></li>
-</ol>
-<blockquote>
-<p>思维导图</p>
-<p><img
-src="https://cdn.jsdelivr.net/gh/Luminous-ee/ImgBed/photos/202301202244216.png" srcset="/img/loading.gif" lazyload /></p>
-</blockquote>
-<h1 id="tips">Tips</h1>
-<ol type="1">
-<li><p>turtle 库</p>
-<p>turtle 库是 Python 的标准库之一，属于入门级的图形绘制函数库；</p>
-<blockquote>
-<p>Python 计算生态 = 标准库 + 第三方库</p>
-<blockquote>
-<p>标准库：随 Pyhton 解释器直接安装的功能模块。</p>
-<p>第三方库：需要经过安装才能使用的功能模块。</p>
-</blockquote>
-</blockquote>
-<p>帮助文档：<a
-target="_blank" rel="noopener" href="https://docs.python.org/3.9/library/turtle.html">turtle - Turtle
-graphics</a></p></li>
-<li><p>导入库的方法</p>
-<ul>
-<li><code>import turtle</code> 或 <code>from turtle import *</code>
-<ul>
-<li>相同：都是引入 turtle 库中的所有方法</li>
-<li>不同：第一种方式下需使用
-<code>turtle.fd()</code>，第二种方式直接使用 <code>fd()</code>
-即可。</li>
-</ul></li>
-<li><code>import turtle as t</code></li>
-</ul></li>
-<li><p>循环语句与 range() 函数</p>
-<ul>
-<li><p><code>for</code> 循环</p>
-<p><div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-comment">#一般格式</span>
-<span class="hljs-keyword">for</span> &lt;variable&gt; <span class="hljs-keyword">in</span> &lt;sequence&gt;:
-&lt;statements&gt;
+<li><p>jieba库常用函数</p>
+<table>
 
-<span class="hljs-comment">#实例</span>
-&gt;&gt;&gt;languages = [<span class="hljs-string">&quot;C&quot;</span>, <span class="hljs-string">&quot;C++&quot;</span>, <span class="hljs-string">&quot;Python&quot;</span>] 
-<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> languages:
-<span class="hljs-meta">... </span>    <span class="hljs-built_in">print</span> (x)
-<span class="hljs-meta">... </span>
-C
-C++
-Python</code></pre></div></p></li>
-<li><p><code>range()</code> 函数：产生循环计数序列</p>
-<ul>
-<li><code>range(n)</code>，产生 0 到 n-1
-的整数序列，<code>for i in range(5):</code></li>
-<li><code>range(m,n)</code>，产生 m 到 n-1
-的整数序列，<code>for i in range(5,9) :</code></li>
-<li><code>range(m,n,q)</code>，产生 m 到 n-1 的整数序列，步长为
-q，<code>for i in range(0,11,2) :</code></li>
-</ul></li>
-</ul></li>
+<thead>
+<tr class="header">
+<th style="text-align: center;">函数</th>
+<th style="text-align: center;">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><code>jieba.lcut(s)</code></td>
+<td
+style="text-align: center;"><strong>精确模式</strong>，返回一个列表类型的分词结果</td>
+</tr>
+<tr class="even">
+<td
+style="text-align: center;"><code>jieba.lcut(s,cut_all=True)</code></td>
+<td
+style="text-align: center;"><strong>全模式</strong>，返回一个列表类型的分词结果，存在冗余</td>
+</tr>
+<tr class="odd">
+<td
+style="text-align: center;"><code>jieba.lcut_for_search(s)</code></td>
+<td
+style="text-align: center;"><strong>搜索引擎模式</strong>，返回一个列表类型的分词结果，存在冗余</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>jieba.add_word(w)</code></td>
+<td style="text-align: center;">向分词词典<strong>增加新词
+w</strong></td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+<h1 id="wordcloud-库词云展示第三方库"><strong>wordcloud</strong>
+库：词云展示第三方库</h1>
+<h2 id="由文本变为词云wordcloud-库做了什么">由文本变为词云，wordcloud
+库做了什么？</h2>
+<ol type="1">
+<li>分隔：将文本以空格分隔成单词</li>
+<li>统计：单词出现的次数并过滤</li>
+<li>字体：根据统计配置字号</li>
+<li>布局：颜色环境尺寸</li>
 </ol>
+<blockquote>
+<p>所以使用时只需要给出一个以空格分隔的字符串就可以了。</p>
+</blockquote>
+<h2 id="实现步骤">实现步骤</h2>
+<ol type="1">
+<li><p><code>w = wordcloud.WordCloud(&lt;参数&gt;)</code>
+创建一个词云对象 <code>w</code></p>
+<ul>
+<li><p>参数</p>
+<table>
+
+<thead>
+<tr class="header">
+<th style="text-align: center;">参数</th>
+<th style="text-align: center;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><code>width</code></td>
+<td style="text-align: center;">指定词云对象生成图片的宽度。默认 400
+像素</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>height</code></td>
+<td style="text-align: center;">高度。默认 200 像素</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>min_font_size</code></td>
+<td style="text-align: center;">指定词云中字体的最小字号。默认 4 号</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>max_font_size</code></td>
+<td style="text-align: center;">最大字号。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>font_step</code></td>
+<td style="text-align: center;">指定词云中字体字号的步进间隔。默认为
+1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>font_path</code></td>
+<td style="text-align: center;">指定字体文件的路径，默认 None</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>max_words</code></td>
+<td style="text-align: center;">指定词云显示的最大单词数量，默认
+200</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>stop_words</code></td>
+<td style="text-align: center;">指定词云的排除词，即不显示的单词, 例如
+<code>stop_words=&#123;"python", "world"&#125;</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>mask</code></td>
+<td style="text-align: center;">指定词云形状。默认矩形</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>background_color</code></td>
+<td style="text-align: center;">指定背景颜色。默认黑色</td>
+</tr>
+</tbody>
+</table></li>
+</ul></li>
+<li><p>两个方法</p>
+<table>
+
+<thead>
+<tr class="header">
+<th style="text-align: center;">函数</th>
+<th style="text-align: center;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><code>w.generate(txt)</code></td>
+<td style="text-align: center;">向词云对象 w 中加载 txt，txt
+是以空格分隔的字符串。<code>w.generate("Python and WordCloud")</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>w.to_file(filename)</code></td>
+<td style="text-align: center;">将词云输出为图像文件，<code>.png</code>
+或 <code>.jpg</code> 格式。<code>w.to_file("outfile.png")</code></td>
+</tr>
+</tbody>
+</table></li>
+</ol>
+<h1 id="jieba-wordcloud-示例">jieba + wordcloud 示例</h1>
+<ul>
+<li>展示《沉默的羔羊》中出现最多的词及出现的次数</li>
+<li>展示《沉默的羔羊》词云</li>
+</ul>
+<p>代码：</p>
+<div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> jieba
+<span class="hljs-keyword">import</span> wordcloud
+
+<span class="hljs-comment"># 读取文件</span>
+file = <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;沉默的羔羊.txt&quot;</span>, <span class="hljs-string">&quot;r&quot;</span>, encoding=<span class="hljs-string">&quot;utf-8&quot;</span>)
+txt = file.read()
+file.close()
+
+<span class="hljs-comment"># jieba库分词，过滤单个字</span>
+ls_temp = jieba.lcut(txt)
+ls = []
+<span class="hljs-keyword">for</span> word <span class="hljs-keyword">in</span> ls_temp:
+    <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(word) &gt;= <span class="hljs-number">2</span>:
+        ls.append(word)
+
+<span class="hljs-comment"># 打印出现最多的词</span>
+d = &#123;&#125;
+<span class="hljs-keyword">for</span> word <span class="hljs-keyword">in</span> ls:
+    d[word] = d.get(word,<span class="hljs-number">0</span>) + <span class="hljs-number">1</span>
+lt = <span class="hljs-built_in">list</span>(d.items())
+lt.sort(key=<span class="hljs-keyword">lambda</span> ele:ele[<span class="hljs-number">1</span>],reverse=<span class="hljs-literal">True</span>)
+word,count = lt[<span class="hljs-number">0</span>]
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;&#123;&#125; &#123;&#125;&quot;</span>.<span class="hljs-built_in">format</span>(word, count))
+
+<span class="hljs-comment"># 输出词云</span>
+Str = <span class="hljs-string">&quot; &quot;</span>.join(ls)
+w = wordcloud.WordCloud(width=<span class="hljs-number">1000</span>, height=<span class="hljs-number">700</span>, background_color=<span class="hljs-string">&quot;white&quot;</span>, \
+    font_path=<span class="hljs-string">&quot;msyh.ttc&quot;</span>)
+w.generate(Str)
+w.to_file(<span class="hljs-string">&quot;lambs.png&quot;</span>)</code></pre></div>
+<p>输出结果：</p>
+<div class="code-wrapper"><pre><code class="hljs">Building prefix dict from the default dictionary ...
+Dumping model to file cache C:\Users\莫临城\AppData\Local\Temp\jieba.cache
+Loading model cost 1.535 seconds.
+Prefix dict has been built successfully.
+
+
+史达琳 701
+
+&lt;wordcloud.wordcloud.WordCloud at 0x212d626c1f0&gt;</code></pre></div>
+<p>词云：</p>
 <p><img
-src="https://cdn.jsdelivr.net/gh/Luminous-ee/ImgBed/photos/202301202312733.jpg" srcset="/img/loading.gif" lazyload /></p>
+src="https://cdn.jsdelivr.net/gh/Luminous-ee/ImgBed/photos/202301261520093.png" srcset="/img/loading.gif" lazyload /></p>
+<blockquote>
+<p>《沉默的羔羊》</p>
+<blockquote>
+<p>链接：<a
+target="_blank" rel="noopener" href="https://pan.baidu.com/s/1_YibOGIAL0oTtalBahP1tA?pwd=xby3">https://pan.baidu.com/s/1_YibOGIAL0oTtalBahP1tA?pwd=xby3</a>
+提取码：xby3</p>
+</blockquote>
+</blockquote>
 
                 
               </div>
@@ -510,8 +551,8 @@ src="https://cdn.jsdelivr.net/gh/Luminous-ee/ImgBed/photos/202301202312733.jpg" 
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Python 与 Packages（一）：turtle库</div>
-      <div>https://luminous-ee.github.io/2023/01/20/Python-与-Packages（一）：turtle库/</div>
+      <div>Python 与 Packages（五）：jieba + wordcloud</div>
+      <div>https://luminous-ee.github.io/2023/01/27/Python-与-Packages（五）：jieba-wordcloud/</div>
     </div>
     <div class="license-meta">
       
@@ -523,7 +564,7 @@ src="https://cdn.jsdelivr.net/gh/Luminous-ee/ImgBed/photos/202301202312733.jpg" 
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年1月20日</div>
+          <div>2023年1月27日</div>
         </div>
       
       
@@ -555,9 +596,9 @@ src="https://cdn.jsdelivr.net/gh/Luminous-ee/ImgBed/photos/202301202312733.jpg" 
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/01/22/Python%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%9A%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" title="Python基础（二）：基本数据类型">
+                      <a href="/2023/01/28/Python%E5%9F%BA%E7%A1%80%EF%BC%88%E5%85%AB%EF%BC%89%EF%BC%9A%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95%E5%AD%A6/" title="Python基础（八）：程序设计方法学">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Python基础（二）：基本数据类型</span>
+                        <span class="hidden-mobile">Python基础（八）：程序设计方法学</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -565,8 +606,8 @@ src="https://cdn.jsdelivr.net/gh/Luminous-ee/ImgBed/photos/202301202312733.jpg" 
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/01/19/Python%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E5%85%83%E7%B4%A0/" title="Python基础（一）：基本语法元素">
-                        <span class="hidden-mobile">Python基础（一）：基本语法元素</span>
+                      <a href="/2023/01/26/Python%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%83%EF%BC%89%EF%BC%9A%E6%96%87%E4%BB%B6%E4%B8%8E%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F%E5%8C%96/" title="Python基础（七）：文件与数据格式化">
+                        <span class="hidden-mobile">Python基础（七）：文件与数据格式化</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -579,7 +620,7 @@ src="https://cdn.jsdelivr.net/gh/Luminous-ee/ImgBed/photos/202301202312733.jpg" 
             
   <article id="comments" lazyload>
     
-  <div id="SOHUCS" sid='https://luminous-ee.github.io/2023/01/20/Python-%E4%B8%8E-Packages%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9Aturtle%E5%BA%93/'></div>
+  <div id="SOHUCS" sid='https://luminous-ee.github.io/2023/01/27/Python-%E4%B8%8E-Packages%EF%BC%88%E4%BA%94%EF%BC%89%EF%BC%9Ajieba-wordcloud/'></div>
   <script type="text/javascript">
     Fluid.utils.loadComments('#SOHUCS', function() {
       Fluid.utils.createScript("https://changyan.sohu.com/upload/changyan.js", function() {
